@@ -1,5 +1,12 @@
 <?php
 
+// Connexion Base de données
+function getDb() 
+{
+	$bdd = new PDO('mysql:host=localhost;dbname=tp_blog_mvc_2;charset=utf8','root', '');
+	return $bdd;
+}
+
 function getBillets()
 {
 	$bdd = new PDO('mysql:host=localhost;dbname=tp_blog_mvc_2;charset=utf8','root', '');
@@ -8,3 +15,4 @@ function getBillets()
           . ' order by BIL_ID desc');
 	return $billets;
 }
+
