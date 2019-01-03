@@ -2,6 +2,12 @@
 
 require 'model/model.php';
 
-$billets = getBillets();
-
-require 'view/view.php';
+try {
+	$billets = getBillets();
+	require 'view/view.php';
+	
+}
+catch (Exception $e) {
+	$errorMessage = $e->getMessage();
+	require 'view/errorView.php';
+}
