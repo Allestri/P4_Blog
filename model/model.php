@@ -17,7 +17,7 @@ function getBillets()
 }
 
 
-function getBillet()
+function getBillet($idBillet)
 {
 	$bdd = getDb();
 	$billet = $bdd->prepare('select BIL_ID as id, BIL_DATE as date,'
@@ -32,7 +32,7 @@ function getBillet()
 	}
 }
 
-function getCommentaires()
+function getCommentaires($idBillet)
 {
 	$bdd = getDb();
 	$commentaires = $bdd->prepare('select COM_ID as id, COM_DATE as date,'
