@@ -44,7 +44,7 @@ class Routeur {
 
   // Affiche une erreur
   private function erreur($msgErreur) {
-    $vue = new View("Erreur");
+    $vue = new View("Error");
     $vue->generer(array('msgErreur' => $msgErreur));
   }
 }
