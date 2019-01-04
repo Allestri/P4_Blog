@@ -1,7 +1,6 @@
-<?php $titre = 'Accueil de mon Blog'; ?>
+<?php $this->titre = 'Accueil de mon Blog'; ?>
 
 <!-- Template contenus -->
-<? ob_start(); ?>
 
 <?php foreach ($billets as $billet): ?>
 <article>
@@ -17,6 +16,5 @@
 <?php endforeach; ?>
 
 <!-- Fin du template contenus-->
-<?php $content = ob_get_clean(); ?>
 
 <?php require 'view/template.php'; ?>

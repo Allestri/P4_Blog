@@ -19,7 +19,7 @@ class Billet extends Model
 	{
 		$sql = 'select BIL_ID as id, BIL_DATE as date,'
 		. ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET'
-		. ' where BIL_ID=?');
+		. ' where BIL_ID=?';
 		$billet = $this->executerRequete($sql, array($idBillet));
 		
 		if($billet->rowCount() == 1) {
