@@ -1,32 +1,31 @@
 <?php
 
-class Model {
+abstract class Model {
 
-	// Renvoie la liste des billets du blog
-	public function getBillets()
-	{
-		$bdd = $this->getDb();
-		$billets = $bdd->query('select BIL_ID as id, BIL_DATE as date,'
-			  . ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET'
-			  . ' order by BIL_ID desc');
-		return $billets;
-	}
-
-	// Renvoie les infos sur un billet
-	public function getBillet($idBillet)
-	{
-		$bdd = $this->getDb();
-		$billet = $bdd->prepare('select BIL_ID as id, BIL_DATE as date,'
-		. ' BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET'
-		. ' where BIL_ID=?');
-		$billet->execute(array($idBillet));
-		
-		if($billet->rowCount() == 1) {
-			return $billet->fetch(); // Accès a la première ligne de resultat
+	// Objet PDO d'accès à la BD
+	private $bdd;
+	
+	// Execute une requête SQL eventuellement paramatrée
+	protected function executerRequete($sql, $params = null) {
+		if ($params == null) 
+		{
+			$resultat = $this->getBdd()->query($sql); // execution directe
 		} else {
-			throw new Exception("Aucun billet ne correspond à l'identifiant '$idBillet'");
+			$resultat = $this->getBdd()->prepare($sql); // requête preparée
+			$resultat->execute($params);
 		}
+		return $resultat;
 	}
+	
+	private function getBdd()
+	{
+		if($this->bdd == null) 
+		{
+			//Creation de la connexion
+			$this->bdd = new PDO('mysql:host=localhost;dbname=monblog;charset=utf8','root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+		}
+    return $this->bdd;
+  }
 	
 	// Renvoie la liste des commentaires associés à un billet
 	public function getCommentaires($idBillet)
