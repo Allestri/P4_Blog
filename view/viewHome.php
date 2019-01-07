@@ -17,4 +17,3 @@
 
 <!-- Fin du template contenus-->
 
-<?php require 'view/template.php'; ?>

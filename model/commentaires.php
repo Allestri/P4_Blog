@@ -13,4 +13,13 @@ class Commentaire extends Model {
     return $commentaires;
 
   }
+  
+	// Ajouter un commentaire dans la base
+	public function ajouterCommentaire($auteur, $contenu, $idBillet) {
+		$sql = 'insert into T_COMMENTAIRE(COM_DATE, COM_AUTEUR, COM_CONTENU, BIL_ID)'
+		. ' values(NOW(), ?, ?, ?)';
+		$this->executerRequete($sql, array($auteur, $contenu, $idBillet));
+	}
+  
+  
 }
