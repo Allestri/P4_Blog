@@ -8,7 +8,7 @@
 		<a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>">
 			<h1 class="titreBillet"><?= $billet['titre'] ?></h1>
 		</a>
-		<time><?= $billet['date'] ?></time>
+		<time><?= $billet['date_fr'] ?></time>
 	</header>
 	<p><?= $billet['contenu'] ?></p>
 </article>

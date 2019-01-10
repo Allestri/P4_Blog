@@ -3,7 +3,7 @@
 <article>
   <header>
     <h1 class="titreBillet"><?= $billet['titre'] ?></h1>
-    <time><?= $billet['date'] ?></time>
+    <time><?= $billet['date_fr'] ?></time>
   </header>
   <p><?= $billet['contenu'] ?></p>
 </article>
@@ -11,10 +11,12 @@
 <header>
   <h1 id="titreReponses">Réponses à <?= $billet['titre'] ?></h1>
 </header>
+
 <?php foreach ($commentaires as $commentaire): ?>
-  <p><?= $commentaire['auteur'] ?> le <?= $commentaire['date_fr'] ?> dit :</p>
+  <p><?= $commentaire['auteur'] ?> le <?= $commentaire['date_fr'] ?> <a href="#">Signaler</a></p>
   <p><?= $commentaire['contenu'] ?></p>
 <?php endforeach; ?>
+
 <form method="post" action="index.php?action=commenter">
     <input id="auteur" name="auteur" type="text" placeholder="Votre pseudo" required /><br />
     <textarea id="txtCommentaire" name="contenu" rows="4" placeholder="Votre commentaire" required></textarea><br />

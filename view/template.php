@@ -9,6 +9,7 @@
     <div id="global">
       <header>
         <a href="index.php"><h1 id="titreBlog">Blog P4</h1></a>
+		<p><a href="#">S'inscrire</a>|<a href="#">Connexion</a></p>
         <p>Je vous souhaite la bienvenue sur ce modeste blog.</p>
       </header>
       <div id="contenu">
