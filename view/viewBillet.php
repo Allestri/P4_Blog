@@ -13,7 +13,13 @@
 </header>
 
 <?php foreach ($commentaires as $commentaire): ?>
-  <p><?= $commentaire['auteur'] ?> le <?= $commentaire['date_fr'] ?> <a href="#">Signaler</a></p>
+  <p><?= $commentaire['auteur'] ?> le <?= $commentaire['date_fr'] ?> 
+	<form method="post" action="index.php?action=signaler">
+		<input type="hidden" name="idBillet" value="<?= $billet['id'] ?>" />
+		<input type="hidden" name="idCom" value="<?= $commentaire['id'] ?>" />
+		<button>Signaler</button>
+	</form>
+  </p>
   <p><?= $commentaire['contenu'] ?></p>
 <?php endforeach; ?>
 
