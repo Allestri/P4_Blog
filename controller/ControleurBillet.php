@@ -26,10 +26,11 @@ class ControleurBillet {
 	public function commenter($auteur, $contenu, $idBillet) {
 		$this->commentaire->ajouterCommentaire($auteur, $contenu, $idBillet);
 		$this->billet($idBillet);
+		header('Location: index.php?action=billet&id=' . $idBillet);
 	}
 	
 	// Signaler un commentaire
-	public function signaler($idCommentaire) {
+	public function signaler($idBillet, $idCommentaire) {
 		$this->commentaire->signalerCommentaire($idCommentaire);
 		$this->billet($idBillet);
 	}

@@ -33,8 +33,9 @@ class Routeur {
 					$this->ctrlBillet->commenter($auteur, $contenu, $idBillet);
 				}
 				else if ($_GET['action'] == 'signaler') {
-					$idBillet = $this->getParametre($_POST, 'id');
+					$idBillet = $this->getParametre($_POST, 'idBillet');
 					$idCom = $this->getParametre($_POST, 'idCom');
+					$this->ctrlBillet->signaler($idBillet, $idCom);
 				}
 				else
 					throw new Exception("Action non valide");
