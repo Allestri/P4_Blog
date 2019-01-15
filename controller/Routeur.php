@@ -2,16 +2,19 @@
 
 require_once 'controller/ControleurAccueil.php';
 require_once 'controller/ControleurBillet.php';
+require_once 'controller/ControleurAdmin.php';
 require_once 'view/viewClass.php';
 
 class Routeur {
 
 	private $ctrlAccueil;
 	private $ctrlBillet;
+	private $ctrlAdmin;
 
 	public function __construct() {
 		$this->ctrlAccueil = new ControleurAccueil();
 		$this->ctrlBillet = new ControleurBillet();
+		$this->ctrlAdmin = new ControleurAdmin();
 	}
 
 	// Traite une requête entrante
@@ -37,6 +40,9 @@ class Routeur {
 					$idCom = $this->getParametre($_POST, 'idCom');
 					$this->ctrlBillet->signaler($idBillet, $idCom);
 				}
+				else if ($_GET['action'] == 'connexion') {
+					$this->ctrlAdmin->connexion();
+				} 
 				else
 					throw new Exception("Action non valide");
 			}
