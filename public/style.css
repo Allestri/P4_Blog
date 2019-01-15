@@ -25,6 +25,23 @@ h1 {
     padding: 5px 20px;
 }
 
+/* Formulaire */
+
+.formulaire
+{
+	height:170px;
+	width:300px;
+	background-color:#676767;
+	padding-left:10px;
+	padding-top:20px;
+}
+
+input[type='password'],[type="text"]
+{
+	margin-left:20px;
+}
+
+
 #contenu {
     margin-bottom : 30px;
 }
