@@ -42,6 +42,7 @@ class Routeur {
 				}
 				else if ($_GET['action'] == 'connexion') {
 					$this->ctrlAdmin->connexion();
+					
 				} 
 				else
 					throw new Exception("Action non valide");

@@ -14,7 +14,7 @@ Class View
 	}
 
 	// Génère et affiche la vue
-	public function generer($donnees) 
+	public function generer($donnees=[]) 
 	{
 		// Génération de la partie spécifique de la vue
 		$contenu = $this->genererFichier($this->fichier, $donnees);
