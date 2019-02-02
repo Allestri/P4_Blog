@@ -15,7 +15,7 @@ Class Admin extends Model
 	
 	
 	// Liste commentaires signalés
-	public function getSignCom()
+	public function getSignCom($idCommentaire)
 	{
 		$sql = "SELECT * FROM `t_commentaire` WHERE COM_SIGNALER = 1";
 		$signCom = $this->executerRequete($sql);
