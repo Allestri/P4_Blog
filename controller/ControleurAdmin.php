@@ -12,5 +12,12 @@ class ControleurAdmin {
 	$vue = new View("Connexion");
 	$vue->generer();
 	}
+	
+	// Espace administration
+	public function admin(){
+	
+	$vue = new View("Administration");
+	$vue->generer();
+	}
 
 }
