@@ -1,14 +1,15 @@
 <?php 
 
 require_once 'model/billet.php';
-require_once 'model/commentaires.php';
+require_once 'model/admin.php';
 require_once 'view/viewClass.php';
 
 class ControleurAdmin {
 
+	private $signCom;
 
 	public function __construct() {
-		$this->commentaire = new Commentaire();
+		$this->commentaire = new Admin();
 	}
 
 	// Afficher formulaire de connexion
@@ -19,14 +20,15 @@ class ControleurAdmin {
 	
 	// Espace administration
 	public function admin(){
+		$commentaires = $this->commentaire->getSignCom();
 		$vue = new View("Admin");
-		$vue->generer();
+		$vue->generer(array('commentaire' => $commentaires));
 	}
 	
 	
 	// Afficher commentaire signalés panel Admin
-	public function DisplaySignCom($idCommentaire){
-		$commentaires = $this->commentaire->getSignCom($idCommentaire);
+	public function displaySignCom(){
+		$commentaires = $this->commentaire->getSignCom();
 	}
 
 }
