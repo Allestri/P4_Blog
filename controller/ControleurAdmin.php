@@ -10,6 +10,7 @@ class ControleurAdmin {
 
 	public function __construct() {
 		$this->commentaire = new Admin();
+		$this->billet = new Billet();
 	}
 
 	// Afficher formulaire de connexion
@@ -21,8 +22,9 @@ class ControleurAdmin {
 	// Espace administration
 	public function admin(){
 		$commentaires = $this->commentaire->getSignCom();
+		$billets = $this->billet->getBillets();
 		$vue = new View("Admin");
-		$vue->generer(array('commentaire' => $commentaires));
+		$vue->generer(array('billets' => $billets, 'commentaire' => $commentaires));
 	}
 	
 	

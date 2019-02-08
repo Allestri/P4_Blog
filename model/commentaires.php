@@ -8,8 +8,8 @@ class Commentaire extends Model {
 	public function getCommentaires($idBillet) {
 		$sql = 'select COM_ID as id, DATE_FORMAT(COM_DATE, \'%d/%m/%Y à %Hh%imin%ss\') 
 		AS date_fr, COM_AUTEUR as auteur, COM_CONTENU as contenu from T_COMMENTAIRE where BIL_ID=?';
-		$commentaires = $this->executerRequete($sql, array($idBillet));
-	return $commentaires;
+		$commentairest = $this->executerRequete($sql, array($idBillet));
+	return $commentairest;
 	}
   
 	// Ajouter un commentaire dans la base

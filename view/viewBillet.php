@@ -12,7 +12,7 @@
   <h1 id="titreReponses">Réponses à <?= $billet['titre'] ?></h1>
 </header>
 
-<?php foreach ($commentaires as $commentaire): ?>
+<?php foreach ($commentairest as $commentaire): ?>
   <p><?= $commentaire['auteur'] ?> le <?= $commentaire['date_fr'] ?> 
 	<form method="post" action="index.php?action=signaler">
 		<input type="hidden" name="idBillet" value="<?= $billet['id'] ?>" />

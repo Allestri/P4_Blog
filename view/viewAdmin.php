@@ -12,17 +12,18 @@ session_start();
 
 <!-- A modifier -->
 <h2>Supprimer un Billet</h2>
+
 <form method="POST" action="index.php?action=supprimer" id="supprimer_form">
 	<select name="idBillet" form="supprimer_form">
 	<?php
 	foreach ($billets as $billet): ?>
-	<option value="<?= $billet['COM_ID'] ?>">Billet <?= $billet['COM_ID'] ?></option>';
-	</select>
+		<option value="<?= $billet['id']?>">Billet <?= $billet['id'] ?></option>
+		<!-- <p>Bonjour</p> -->
 	<?php endforeach; ?>
+	</select>
 	<br/>
-	<button>Supprimer Commentaire</button>
+	<button>Supprimer Billet</button>
 </form>
-<!-- A modifier -->
 
 
 <h2>Modération commentaire</h2>
@@ -30,7 +31,7 @@ session_start();
 foreach ($commentaire as $signComs): ?>
 <article>
 	<header>
-	<!-- Titre du commentaire !--> 
+	<!-- Titre du commentaire !-->
 		<p>Commentaire ID : <?= $signComs['COM_ID'] ?> </p>
 		<p>Posté par : <strong><?= $signComs['COM_AUTEUR']?></strong> le <?= $signComs['COM_DATE']?></p>
 	</header>

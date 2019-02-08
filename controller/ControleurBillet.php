@@ -19,7 +19,7 @@ class ControleurBillet {
 		$billet = $this->billet->getBillet($idBillet);
 		$commentaires = $this->commentaire->getCommentaires($idBillet);
 		$vue = new View("Billet");
-		$vue->generer(array('billet' => $billet, 'commentaires' => $commentaires));
+		$vue->generer(array('billet' => $billet, 'commentairest' => $commentaires));
 	}
   
 	// Ajoute un commentaire
