@@ -46,6 +46,11 @@ class Routeur {
 				else if ($_GET['action'] == 'administration') {
 					$this->ctrlAdmin->admin();
 				}
+				else if ($_GET['action'] == 'creer') {
+					$titreBillet = $this->getParametre($_POST, 'titre');
+					$contenuBillet = $this->getParametre($_POST, 'contenu');
+					$this->ctrlAdmin->create($titreBillet, $contenuBillet);
+				}
 				else if ($_GET['action'] == 'moderer') {
 					$idCom = $this->getParametre($_POST, 'cid');
 					$modCom = $this->getParametre($_POST, 'modCom');

@@ -1,7 +1,18 @@
 <?php
+session_start();
+?>
+<h1>Bienvenue dans l'administration</h1>
+<h2>Créer un billet</h2>
 
-echo "<h1>Bienvenue dans l'administration</h1>";
+<form method="POST" action="index.php?action=creer">
+	<label>Titre<input type="text" name="titre" /></label><br/>
+	<label>Contenus<input type="text" name="contenu" /></label><br/>
+	<button>Créer un billet</button>
+</form>
 
+
+<h2>Modération commentaire</h2>
+<?php
 foreach ($commentaire as $signComs): ?>
 <article>
 	<header>

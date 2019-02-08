@@ -35,5 +35,14 @@ class ControleurAdmin {
 	public function moderateCom($idCommentaire, $contenus){
 		$this->commentaire->modSignCom($idCommentaire, $contenus);
 	}
+	
+	
+	// Creation Billet
+	public function create($titre, $contenu)
+	{
+		$this->commentaire->create($titre, $contenu);
+		header('Location: index.php?action=administration');
+	}
+	
 
 }

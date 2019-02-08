@@ -30,6 +30,15 @@ Class Admin extends Model
 	}
 
 	// Supprimer commentaire signalé 
+	
+	//
+	
+	// Creation Billet
+	public function create($titre, $contenu)
+	{
+		$sql = "INSERT INTO t_billet(BIL_DATE, BIL_TITRE, BIL_CONTENU) VALUES(NOW(), ?, ?)";
+		$this->executerRequete($sql, array($titre, $contenu));
+	}
 
 }
 
