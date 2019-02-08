@@ -21,6 +21,15 @@ Class Admin extends Model
 		$signCom = $this->executerRequete($sql);
 		return $signCom;
 	}
+	
+	// Modérer commentaire signalés
+	public function modSignCom($idCommentaire, $contenus)
+	{
+		$sql = 'UPDATE t_commentaire SET COM_CONTENU = ? WHERE COM_ID = ?';
+		$this->executerRequete($sql, array($idCommentaire, $contenus));
+	}
+
+	// Supprimer commentaire signalé 
 
 }
 

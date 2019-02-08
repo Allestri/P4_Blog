@@ -30,5 +30,10 @@ class ControleurAdmin {
 	public function displaySignCom(){
 		$commentaires = $this->commentaire->getSignCom();
 	}
+	
+	// Moderer commentaire
+	public function moderateCom($idCommentaire, $contenus){
+		$this->commentaire->modSignCom($idCommentaire, $contenus);
+	}
 
 }
