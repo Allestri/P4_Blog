@@ -51,6 +51,10 @@ class Routeur {
 					$contenuBillet = $this->getParametre($_POST, 'contenu');
 					$this->ctrlAdmin->create($titreBillet, $contenuBillet);
 				}
+				else if($_GET['action'] == 'supprimer') {
+					$idBillet = $this->getParametre($_POST, 'idBillet');
+					$this->ctrlAdmin->suppress($idBillet);
+				}
 				else if ($_GET['action'] == 'moderer') {
 					$idCom = $this->getParametre($_POST, 'cid');
 					$modCom = $this->getParametre($_POST, 'modCom');

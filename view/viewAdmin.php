@@ -10,6 +10,20 @@ session_start();
 	<button>Créer un billet</button>
 </form>
 
+<!-- A modifier -->
+<h2>Supprimer un Billet</h2>
+<form method="POST" action="index.php?action=supprimer" id="supprimer_form">
+	<select name="idBillet" form="supprimer_form">
+	<?php
+	foreach ($billets as $billet): ?>
+	<option value="<?= $billet['COM_ID'] ?>">Billet <?= $billet['COM_ID'] ?></option>';
+	</select>
+	<?php endforeach; ?>
+	<br/>
+	<button>Supprimer Commentaire</button>
+</form>
+<!-- A modifier -->
+
 
 <h2>Modération commentaire</h2>
 <?php
@@ -29,5 +43,3 @@ foreach ($commentaire as $signComs): ?>
 </article>
 <hr />
 <?php endforeach; ?>
-
-

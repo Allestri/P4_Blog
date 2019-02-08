@@ -39,6 +39,13 @@ Class Admin extends Model
 		$sql = "INSERT INTO t_billet(BIL_DATE, BIL_TITRE, BIL_CONTENU) VALUES(NOW(), ?, ?)";
 		$this->executerRequete($sql, array($titre, $contenu));
 	}
+	
+	// Suppression Billet
+	public function suppress($idBillet)
+	{
+		$sql = 'DELETE FROM t_billet WHERE bil_id = ?';
+		$this->executerRequete($sql, array($idBillet));
+	}
 
 }
 

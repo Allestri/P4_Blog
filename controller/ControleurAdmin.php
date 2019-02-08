@@ -37,12 +37,24 @@ class ControleurAdmin {
 	}
 	
 	
+	
+	
 	// Creation Billet
 	public function create($titre, $contenu)
 	{
 		$this->commentaire->create($titre, $contenu);
 		header('Location: index.php?action=administration');
 	}
+	
+	// Suppression Billet
+	public function suppress($idBillet)
+	{
+		$this->commentaire->suppress($idBillet);
+		header('Location: index.php?action=administration');
+	}
+	
+	
+	// Modification Billet
 	
 
 }
