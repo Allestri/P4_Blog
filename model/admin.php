@@ -46,6 +46,13 @@ Class Admin extends Model
 		$sql = 'DELETE FROM t_billet WHERE bil_id = ?';
 		$this->executerRequete($sql, array($idBillet));
 	}
+	
+	// Modification Billet
+	public function update($idBillet, $titreBillet, $contenuBillet)
+	{
+		$sql = "UPDATE t_billet SET bil_titre = ?, bil_contenu = ? WHERE bil_id = ?";
+		$this->executerRequete($sql, array($idBillet, $titreBillet, $contenuBillet));
+	}
 
 }
 

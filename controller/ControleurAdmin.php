@@ -57,6 +57,9 @@ class ControleurAdmin {
 	
 	
 	// Modification Billet
-	
+	public function update($idBillet, $titreBillet, $contenuBillet)
+	{
+		$this->billet->update($idBillet, $titreBillet, $contenuBillet);
+	}
 
 }

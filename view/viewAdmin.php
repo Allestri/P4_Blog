@@ -18,7 +18,21 @@ session_start();
 	<?php
 	foreach ($billets as $billet): ?>
 		<option value="<?= $billet['id']?>">Billet <?= $billet['id'] ?></option>
-		<!-- <p>Bonjour</p> -->
+	<?php endforeach; ?>
+	</select>
+	<br/>
+	<button>Supprimer Billet</button>
+</form>
+
+<h2>Modifier un Billet</h2>
+
+<!-- Formulaire ici -->
+
+<form method="POST" action="index.php?action=modifier" id="modifier_form">
+	<select name="idBillet" form="modifier_form">
+	<?php
+	foreach ($billets as $billet): ?>
+		<option value="<?= $billet['id']?>">Billet <?= $billet['id'] ?></option>
 	<?php endforeach; ?>
 	</select>
 	<br/>
