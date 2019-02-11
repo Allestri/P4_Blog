@@ -23,10 +23,10 @@ Class Admin extends Model
 	}
 	
 	// Modérer commentaire signalés
-	public function modSignCom($idCommentaire, $contenus)
+	public function modSignCom($contenus, $idCommentaire)
 	{
 		$sql = 'UPDATE t_commentaire SET COM_CONTENU = ? WHERE COM_ID = ?';
-		$this->executerRequete($sql, array($idCommentaire, $contenus));
+		$this->executerRequete($sql, array($contenus, $idCommentaire));
 	}
 
 	// Supprimer commentaire signalé 

@@ -64,7 +64,7 @@ class Routeur {
 				else if ($_GET['action'] == 'moderer') {
 					$idCom = $this->getParametre($_POST, 'cid');
 					$modCom = $this->getParametre($_POST, 'modCom');
-					$this->ctrlAdmin->moderateCom($idCom, $modCom);
+					$this->ctrlAdmin->moderateCom($modCom, $idCom);
 				}
 				else
 					throw new Exception("Action non valide");

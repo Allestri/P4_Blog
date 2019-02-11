@@ -9,7 +9,7 @@ class ControleurAdmin {
 	private $signCom;
 
 	public function __construct() {
-		$this->commentaire = new Admin();
+		$this->administration = new Admin();
 		$this->billet = new Billet();
 	}
 
@@ -21,21 +21,22 @@ class ControleurAdmin {
 	
 	// Espace administration
 	public function admin(){
-		$commentaires = $this->commentaire->getSignCom();
+		$commentaires = $this->administration->getSignCom();
 		$billets = $this->billet->getBillets();
 		$vue = new View("Admin");
-		$vue->generer(array('billets' => $billets, 'commentaire' => $commentaires));
+		$vue->generer(array('billets' => $billets, 'commentaires' => $commentaires));
 	}
 	
 	
 	// Afficher commentaire signalés panel Admin
 	public function displaySignCom(){
-		$commentaires = $this->commentaire->getSignCom();
+		$commentaires = $this->administration->getSignCom();
 	}
 	
 	// Moderer commentaire
-	public function moderateCom($idCommentaire, $contenus){
-		$this->commentaire->modSignCom($idCommentaire, $contenus);
+	public function moderateCom($contenus, $idCommentaire){
+		$this->administration->modSignCom($contenus, $idCommentaire);
+		header('Location: index.php?action=administration');
 	}
 	
 	
@@ -44,14 +45,14 @@ class ControleurAdmin {
 	// Creation Billet
 	public function create($titre, $contenu)
 	{
-		$this->commentaire->create($titre, $contenu);
+		$this->administration->create($titre, $contenu);
 		header('Location: index.php?action=administration');
 	}
 	
 	// Suppression Billet
 	public function suppress($idBillet)
 	{
-		$this->commentaire->suppress($idBillet);
+		$this->administration->suppress($idBillet);
 		header('Location: index.php?action=administration');
 	}
 	
@@ -59,7 +60,7 @@ class ControleurAdmin {
 	// Modification Billet
 	public function update($idBillet, $titreBillet, $contenuBillet)
 	{
-		$this->billet->update($idBillet, $titreBillet, $contenuBillet);
+		$this->administration->update($idBillet, $titreBillet, $contenuBillet);
 	}
 
 }

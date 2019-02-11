@@ -9,40 +9,45 @@ session_start();
 	<label>Contenus<input type="text" name="contenu" /></label><br/>
 	<button>Créer un billet</button>
 </form>
+<hr/>
 
-<!-- A modifier -->
+<!-- A modifier --
 <h2>Supprimer un Billet</h2>
 
 <form method="POST" action="index.php?action=supprimer" id="supprimer_form">
 	<select name="idBillet" form="supprimer_form">
-	<?php
+	?php
 	foreach ($billets as $billet): ?>
-		<option value="<?= $billet['id']?>">Billet <?= $billet['id'] ?></option>
-	<?php endforeach; ?>
+		<option value="?= $billet['id']?>">Billet ?= $billet['id'] ?></option>
+	?php endforeach; ?>
 	</select>
 	<br/>
 	<button>Supprimer Billet</button>
 </form>
+<hr/>
+-->
+
 
 <h2>Modifier un Billet</h2>
-
-<!-- Formulaire ici -->
 
 <form method="POST" action="index.php?action=modifier" id="modifier_form">
 	<select name="idBillet" form="modifier_form">
 	<?php
-	foreach ($billets as $billet): ?>
-		<option value="<?= $billet['id']?>">Billet <?= $billet['id'] ?></option>
+	foreach ($billets as $modBillet): ?>
+		<option value="<?= $modBillet['id']?>">Billet <?= $modBillet['id'] ?></option>
 	<?php endforeach; ?>
 	</select>
 	<br/>
-	<button>Supprimer Billet</button>
+	<input type="text" name="titre" /><br/>
+	<input type="text" name="contenus" /><br/>
+	<button>Modifier Billet</button>
 </form>
+<hr/>
 
 
 <h2>Modération commentaire</h2>
 <?php
-foreach ($commentaire as $signComs): ?>
+foreach ($commentaires as $signComs): ?>
 <article>
 	<header>
 	<!-- Titre du commentaire !-->
