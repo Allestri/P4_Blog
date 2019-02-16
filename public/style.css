@@ -8,8 +8,9 @@ body {
     font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
 }
 
-h1 {
-    color: white;
+a, h1
+{
+	color:white;
 }
 
 .titreBillet {
@@ -24,6 +25,16 @@ h1 {
     text-align: justify;
     padding: 5px 20px;
 }
+
+#header
+{
+	height:100px;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+
+
 
 /* Formulaire */
 

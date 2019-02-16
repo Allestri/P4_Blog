@@ -51,7 +51,7 @@ Class Admin extends Model
 	public function update($idBillet, $titreBillet, $contenuBillet)
 	{
 		$sql = "UPDATE t_billet SET bil_titre = ?, bil_contenu = ? WHERE bil_id = ?";
-		$this->executerRequete($sql, array($idBillet, $titreBillet, $contenuBillet));
+		$this->executerRequete($sql, array($titreBillet, $contenuBillet, $idBillet));
 	}
 
 }

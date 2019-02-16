@@ -11,22 +11,20 @@ session_start();
 </form>
 <hr/>
 
-<!-- A modifier --
+<!-- A modifier -->
 <h2>Supprimer un Billet</h2>
 
 <form method="POST" action="index.php?action=supprimer" id="supprimer_form">
 	<select name="idBillet" form="supprimer_form">
-	?php
+	<?php
 	foreach ($billets as $billet): ?>
-		<option value="?= $billet['id']?>">Billet ?= $billet['id'] ?></option>
-	?php endforeach; ?>
+		<option value="<?= $billet['id']?>">Billet <?= $billet['id'] ?></option>
+	<?php endforeach; ?>
 	</select>
 	<br/>
 	<button>Supprimer Billet</button>
 </form>
 <hr/>
--->
-
 
 <h2>Modifier un Billet</h2>
 
