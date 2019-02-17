@@ -13,9 +13,7 @@ a, h1
 	color:white;
 }
 
-.titreBillet {
-    margin-bottom : 0px;
-}
+
 
 #global {
     min-height: 100%;
@@ -28,15 +26,119 @@ a, h1
 
 #header
 {
-	height:100px;
+	height:70px;
 	display:flex;
+	background-color:red;
 	flex-direction:row;
 	justify-content:space-between;
 }
 
+#connexion
+{
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	background-color:blue;
+}
+
+/* 
+==========================
+Administration
+==========================
+*/
 
 
-/* Formulaire */
+#admin
+{
+	display:flex;
+	flex-direction:row;
+	justify-content: space-between;
+}
+
+#admin h2
+{
+	color:black;
+}
+
+.crud
+{
+	display:flex;
+	flex-direction:column;
+	width:350px;
+	height:350px;
+	background-color:white;
+}
+
+.form
+{
+	height:40%;
+	width:100%;
+	/* background-color:blue; */
+}
+
+.buttonRow
+{
+	display:flex;
+	justify-content:center;
+	/* background-color:red; */
+}
+
+.crud .button
+{
+	
+	-moz-box-shadow: 0px 0px 0px 0px #f0f7fa;
+	-webkit-box-shadow: 0px 0px 0px 0px #f0f7fa;
+	box-shadow: 0px 0px 0px 0px #f0f7fa;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ebebeb), color-stop(1, #a3a3a3));
+	background:-moz-linear-gradient(top, #ebebeb 5%, #a3a3a3 100%);
+	background:-webkit-linear-gradient(top, #ebebeb 5%, #a3a3a3 100%);
+	background:-o-linear-gradient(top, #ebebeb 5%, #a3a3a3 100%);
+	background:-ms-linear-gradient(top, #ebebeb 5%, #a3a3a3 100%);
+	background:linear-gradient(to bottom, #ebebeb 5%, #a3a3a3 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebebeb', endColorstr='#a3a3a3',GradientType=0);
+	background-color:#ebebeb;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #cccccc;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 25px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #e0dfeb;
+}
+.crud button:hover 
+{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #a3a3a3), color-stop(1, #ebebeb));
+	background:-moz-linear-gradient(top, #a3a3a3 5%, #ebebeb 100%);
+	background:-webkit-linear-gradient(top, #a3a3a3 5%, #ebebeb 100%);
+	background:-o-linear-gradient(top, #a3a3a3 5%, #ebebeb 100%);
+	background:-ms-linear-gradient(top, #a3a3a3 5%, #ebebeb 100%);
+	background:linear-gradient(to bottom, #a3a3a3 5%, #ebebeb 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a3a3a3', endColorstr='#ebebeb',GradientType=0);
+	background-color:#a3a3a3;
+}
+.crud button:active 
+{
+	position:relative;
+	top:1px;
+}
+
+
+.titreBillet {
+    margin-bottom : 0px;
+}
+
+
+/* 
+==========================
+Forms
+==========================
+*/
 
 .formulaire
 {

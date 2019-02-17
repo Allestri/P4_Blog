@@ -11,7 +11,15 @@
 		<div id="global">
 			<div id="header">
 				<a href="index.php"><h1 id="titreBlog">Billet simple pour l'Alaska</h1></a>
-				<p><a href="index.php?action=connexion">Connexion</a></p>
+		
+					<div id="connexion">
+						<p><input type="text" placeholder="Identifiant"/></p>
+						<p><input type="text" placeholder="Mot de passe"/></p>
+						<p><a href="index.php?action=connexion">Connexion</a></p>
+						<p><a href="index.php?action=deconnexion">Deconnexion</a></p>
+						<p><a href="index.php?action=administration">Administration</a></p>
+					</div>
+					
 			</div>
 			<div id="contenu">
 				<?= $content ?> 
