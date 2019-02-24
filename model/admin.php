@@ -9,8 +9,9 @@ Class Admin extends Model
 	// Recuperation infos compte
 	public function getAccountInfo($username)
 	{
-		$sql = "SELECT id, pass FROM members WHERE name = ?";
+		$sql = "SELECT * FROM members WHERE name = ?";
 		$admin = $this->executerRequete($sql, array($username));
+		return $admin->fetch();
 	}
 	
 	

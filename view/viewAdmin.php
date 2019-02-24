@@ -1,11 +1,7 @@
-<?php
-session_start();
-?>
-
-<div id="container">
+<div id="wrapper">
 	<h1>Bienvenue dans l'administration</h1>
 	<div id="admin">
-	
+		
 		<div class="crud">
 			<h2>Créer un billet</h2>
 			<hr>
@@ -49,7 +45,7 @@ session_start();
 					<select name="idBillet" form="modifier_form">
 					<?php
 					foreach ($billets as $modBillet): ?>
-						<option value="<?= $modBillet['id']?>">Billet <?= $modBillet['id'] ?></option>
+						<option value="<?= $modBillet['id']?>">Billet <?= $modBillet['titre'] ?></option>
 					<?php endforeach; ?>
 					</select>
 					<br/>
@@ -58,27 +54,38 @@ session_start();
 				</form>
 			</div>
 			<div class="buttonRow">
-				<button class="button" form="modifier_form">Modifier Billet</button>
+				<button class="button left" form="modifier_form">Modifier Billet</button>
+				<button class="button right">Actualiser</button>
 			</div>
 		</div>
 	</div>
 	<hr>
-	<h1>Modération commentaire</h1>
+		
 	<?php
-	foreach ($commentaires as $signComs): ?>
-	<article>
-		<header>
-		<!-- Titre du commentaire !-->
-			<p>Commentaire ID : <?= $signComs['COM_ID'] ?> </p>
-			<p>Posté par : <strong><?= $signComs['COM_AUTEUR']?></strong> le <?= $signComs['COM_DATE']?></p>
-		</header>
-		<p><?= $signComs['COM_CONTENU'] ?></p>
-		<form method="post" action="index.php?action=moderer">
-			<input type="hidden" name="cid" value="<?= $signComs['COM_ID'] ?>" />
-			<input type="text" name="modCom" />
-			<button>Modérer commentaire</button>
-		</form>
-	</article>
-	<hr />
-	<?php endforeach; ?>
+	/* foreach ($admin as $pseudo): ?>
+	<p>Nom: <?= $pseudo['name'] ?></p>
+	<p>Mot de passe: <?= $pseudo['pass'] ?></p>
+	<?php endforeach; */?> 
+
+	<div id="moderation">
+		<h1>Modération commentaire</h1>
+		<?php
+		foreach ($commentaires as $signComs): ?>
+		<article>
+			<header>
+			<!-- Titre du commentaire !-->
+				<p>Commentaire ID : <?= $signComs['COM_ID'] ?> </p>
+				<p>Posté par : <strong><?= $signComs['COM_AUTEUR']?></strong> le <?= $signComs['COM_DATE']?></p>
+			</header>
+			<p><?= $signComs['COM_CONTENU'] ?></p>
+			<form method="post" action="index.php?action=moderer">
+				<input type="hidden" name="cid" value="<?= $signComs['COM_ID'] ?>" />
+				<input type="text" name="modCom" />
+				<button>Modérer commentaire</button>
+			</form>
+		</article>
+		<hr />
+		<?php endforeach; ?>
+	</div>
 </div>
+

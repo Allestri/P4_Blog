@@ -8,7 +8,7 @@
 		<script>tinymce.init({ selector:'textarea' });</script>
 	</head>
 	<body>
-		<div id="global">
+		<div id="container">
 			<div id="header">
 				<a href="index.php"><h1 id="titreBlog">Billet simple pour l'Alaska</h1></a>
 		
@@ -22,6 +22,8 @@
 					
 			</div>
 			<div id="contenu">
+				<p>Connecté</p>
+				<p>Deconnecté</p>
 				<?= $content ?> 
 			</div>
 			<footer id="piedBlog">

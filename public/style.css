@@ -1,44 +1,49 @@
 html, body {
-    height: 100%;
+	height: 100%;
+	margin:0px;
+	padding:0px;
 }
 
 body {
-    color: #bfbfbf;
-    background: #676767;
+    color: #2d2d2d;
+    background: #cccccc;
     font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
 }
 
-a, h1
-{
-	color:white;
-}
-
-
-
-#global {
+#container {
     min-height: 100%;
-    background: #333534;
-    width: 70%;
+    background-color: white;
+    width: 75%;
     margin: auto;
     text-align: justify;
-    padding: 5px 20px;
 }
 
 #header
 {
 	height:70px;
 	display:flex;
-	background-color:red;
 	flex-direction:row;
 	justify-content:space-between;
+	background-color:#c3c3c3
 }
+
+#wrapper
+{
+	margin-top:50px;
+	background-color:#c3c3c3;
+}
+
+a, h1
+{
+	color:#2d2d2d;
+}
+
 
 #connexion
 {
 	display:flex;
 	flex-direction:row;
 	justify-content:space-between;
-	background-color:blue;
 }
 
 /* 
@@ -53,6 +58,8 @@ Administration
 	display:flex;
 	flex-direction:row;
 	justify-content: space-between;
+	height:500px;
+	padding: 0px 20px;
 }
 
 #admin h2
@@ -65,7 +72,7 @@ Administration
 	display:flex;
 	flex-direction:column;
 	width:350px;
-	height:350px;
+	height:450px;
 	background-color:white;
 }
 
@@ -83,24 +90,11 @@ Administration
 	/* background-color:red; */
 }
 
-.crud .button
+.button
 {
-	
-	-moz-box-shadow: 0px 0px 0px 0px #f0f7fa;
-	-webkit-box-shadow: 0px 0px 0px 0px #f0f7fa;
-	box-shadow: 0px 0px 0px 0px #f0f7fa;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ebebeb), color-stop(1, #a3a3a3));
-	background:-moz-linear-gradient(top, #ebebeb 5%, #a3a3a3 100%);
-	background:-webkit-linear-gradient(top, #ebebeb 5%, #a3a3a3 100%);
-	background:-o-linear-gradient(top, #ebebeb 5%, #a3a3a3 100%);
-	background:-ms-linear-gradient(top, #ebebeb 5%, #a3a3a3 100%);
-	background:linear-gradient(to bottom, #ebebeb 5%, #a3a3a3 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ebebeb', endColorstr='#a3a3a3',GradientType=0);
 	background-color:#ebebeb;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
 	border-radius:6px;
-	border:1px solid #cccccc;
+	border:1px solid #bfbfbf;
 	display:inline-block;
 	cursor:pointer;
 	color:#000000;
@@ -111,23 +105,16 @@ Administration
 	text-decoration:none;
 	text-shadow:0px -1px 0px #e0dfeb;
 }
-.crud button:hover 
+
+.right
 {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #a3a3a3), color-stop(1, #ebebeb));
-	background:-moz-linear-gradient(top, #a3a3a3 5%, #ebebeb 100%);
-	background:-webkit-linear-gradient(top, #a3a3a3 5%, #ebebeb 100%);
-	background:-o-linear-gradient(top, #a3a3a3 5%, #ebebeb 100%);
-	background:-ms-linear-gradient(top, #a3a3a3 5%, #ebebeb 100%);
-	background:linear-gradient(to bottom, #a3a3a3 5%, #ebebeb 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a3a3a3', endColorstr='#ebebeb',GradientType=0);
-	background-color:#a3a3a3;
-}
-.crud button:active 
-{
-	position:relative;
-	top:1px;
+border-radius:0px 6px 6px 0px;
 }
 
+.left
+{
+border-radius:6px 0px 0px 6px;	
+}
 
 .titreBillet {
     margin-bottom : 0px;
@@ -147,6 +134,11 @@ Forms
 	background-color:#676767;
 	padding-left:10px;
 	padding-top:20px;
+}
+
+select
+{
+	margin-left:20px;
 }
 
 input[type='password'],[type="text"]
