@@ -17,6 +17,17 @@ body {
 	background-color:#e5e5e5;
 }
 
+a, h1
+{
+	color:#2d2d2d;
+}
+
+/* 
+==========================
+Header / Connexion
+==========================
+*/
+
 #header
 {
 	height:70px;
@@ -25,7 +36,41 @@ body {
 	justify-content:space-between;
 	background-color:#FFFDFF;
 	margin-bottom:40px;
+	line-height:100%;
 }
+
+
+#connexion
+{
+	width:25%;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
+
+
+.button-connexion {
+	background-color:#424242;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#fffdff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:10px 24px;
+	text-decoration:none;
+}
+.button-connexion:hover {
+	background-color:#666666;
+}
+.button-connexion:active {
+	position:relative;
+	top:1px;
+}
+
 
 #superwrapper
 {
@@ -33,7 +78,7 @@ body {
 }
 
 
-#wrapper
+#wrapper-admin
 {
 	margin:auto;
 	display:flex;
@@ -43,19 +88,12 @@ body {
 	background-color:#e5e5e5;
 }
 
-a, h1
+#wrapper-home
 {
-	color:#2d2d2d;
+	margin:auto;
+	width:90%;
+	background-color:#FFFDFF;
 }
-
-
-#connexion
-{
-	display:flex;
-	flex-direction:row;
-	justify-content:space-between;
-}
-
 
 #status
 {
@@ -67,6 +105,7 @@ a, h1
 	line-height:100px;
 	margin-bottom:40px;
 }
+
 
 /* 
 ==========================
@@ -123,7 +162,7 @@ Administration & Modération
 {
 	height:40%;
 	width:100%;
-	/* background-color:blue; */
+	background-color:blue;
 }
 
 .buttonRow
@@ -187,11 +226,6 @@ width:900px;
 }
 
 select
-{
-	margin-left:20px;
-}
-
-input[type='password'],[type="text"]
 {
 	margin-left:20px;
 }

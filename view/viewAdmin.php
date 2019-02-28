@@ -1,4 +1,4 @@
-<div id="wrapper">
+<div id="wrapper-admin">
 	
 	<div id="admin">
 		<h1>Administration</h1>
