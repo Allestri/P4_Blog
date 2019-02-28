@@ -10,7 +10,9 @@
 		</a>
 		<time><?= $billet['date_fr'] ?></time>
 	</header>
-	<p><?= $billet['contenu'] ?></p>
+	<div id="wrapper">
+		<p><?= $billet['contenu'] ?></p>
+	</div>
 </article>
 <hr />
 <?php endforeach; ?>

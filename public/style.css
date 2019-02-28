@@ -6,16 +6,15 @@ html, body {
 
 body {
     color: #2d2d2d;
-    background: #cccccc;
     font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
 }
 
 #container {
     min-height: 100%;
-    background-color: white;
-    width: 75%;
+    width: 100%;
     margin: auto;
     text-align: justify;
+	background-color:#e5e5e5;
 }
 
 #header
@@ -24,13 +23,24 @@ body {
 	display:flex;
 	flex-direction:row;
 	justify-content:space-between;
-	background-color:#c3c3c3
+	background-color:#FFFDFF;
+	margin-bottom:40px;
 }
+
+#superwrapper
+{
+	margin:auto;
+}
+
 
 #wrapper
 {
-	margin-top:50px;
-	background-color:#c3c3c3;
+	margin:auto;
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+	width:90%;
+	background-color:#e5e5e5;
 }
 
 a, h1
@@ -46,25 +56,58 @@ a, h1
 	justify-content:space-between;
 }
 
+
+#status
+{
+	width:400px;
+	height:100px;
+	margin:auto;
+	background-color:#FFFDFF;
+	text-align:center;
+	line-height:100px;
+	margin-bottom:40px;
+}
+
 /* 
 ==========================
-Administration
+Administration & Modération
 ==========================
 */
-
 
 #admin
 {
 	display:flex;
-	flex-direction:row;
+	flex-direction:column;
 	justify-content: space-between;
-	height:500px;
-	padding: 0px 20px;
+	padding: 20px 20px;
+	width:45%;
+	overflow:auto;
+	background-color:#FFFDFF;
 }
 
 #admin h2
 {
 	color:black;
+}
+
+#moderation
+{
+	width:45%;
+	padding: 20px 20px;
+	background-color:#FFFDFF;
+}
+
+.modCommentaire
+{	
+	background-color:grey;
+}
+
+.billet
+{
+	display:flex;
+	flex-direction:row;
+	justify-content: space-between;
+	background-color:grey;
 }
 
 .crud
@@ -126,6 +169,13 @@ border-radius:6px 0px 0px 6px;
 Forms
 ==========================
 */
+
+#connexionForm
+{
+margin:auto;
+height:700px;
+width:900px;	
+}
 
 .formulaire
 {

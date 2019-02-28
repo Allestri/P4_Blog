@@ -21,62 +21,84 @@ class Routeur {
 	public function routerRequete() {
 		try {
 			if (isset($_GET['action'])) {
-				if ($_GET['action'] == 'billet') {
-				$idBillet = intval($this->getParametre($_GET, 'id'));
-				if ($idBillet != 0) {
-					$this->ctrlBillet->billet($idBillet);
+				
+				switch($_GET['action']) {
+					case 'billet':
+						$idBillet = intval($this->getParametre($_GET, 'id'));
+						if ($idBillet != 0) {
+							$this->ctrlBillet->billet($idBillet);
+						}
+						else {
+							throw new Exception("Identifiant de billet non valide");
+						}
+						break;
+				
+						case 'commenter':
+							$auteur = $this->getParametre($_POST, 'auteur');
+							$contenu = $this->getParametre($_POST, 'contenu');
+							$idBillet = $this->getParametre($_POST, 'id');
+							$this->ctrlBillet->commenter($auteur, $contenu, $idBillet);
+							
+						case 'signaler':
+						
+							$idBillet = $this->getParametre($_POST, 'idBillet');
+							$idCom = $this->getParametre($_POST, 'idCom');
+							$this->ctrlBillet->signaler($idBillet, $idCom);
+						break;
+							
+						case 'connexion':
+						
+							$this->ctrlAdmin->connexion();
+						break;
+						
+						case 'deconnexion':
+							$this->ctrlAdmin->deconnexion();
+						break;
+						
+						case 'administration':
+						
+							$this->ctrlAdmin->admin();
+						break;
+						
+						case 'connexionAdmin':
+							$this->ctrlAdmin->connexionAdmin();
+						break;
+						
+						case 'creer':
+							$titreBillet = $this->getParametre($_POST, 'titre');
+							$contenuBillet = $this->getParametre($_POST, 'contenu');
+							$this->ctrlAdmin->create($titreBillet, $contenuBillet);
+						break;
+						
+						case 'supprimer':
+							$idBillet = $this->getParametre($_POST, 'idBillet');
+							$this->ctrlAdmin->suppress($idBillet);
+						break;
+						
+						case 'modifier':
+							$idBillet = $this->getParametre($_POST, 'idBillet');
+							$titreBillet = $this->getParametre($_POST, 'titre');
+							$contenuBillet = $this->getParametre($_POST, 'contenus');
+							$this->ctrlAdmin->update($idBillet, $titreBillet, $contenuBillet);
+						break;
+						
+						case 'moderer':
+							$idCom = $this->getParametre($_POST, 'cid');
+							$modCom = $this->getParametre($_POST, 'modCom');
+							$this->ctrlAdmin->moderateCom($modCom, $idCom);
+						break;
+						default:
+							throw new Exception("Action non valide");
 				}
-				else
-					throw new Exception("Identifiant de billet non valide");
-				}
-				else if ($_GET['action'] == 'commenter') {
-					$auteur = $this->getParametre($_POST, 'auteur');
-					$contenu = $this->getParametre($_POST, 'contenu');
-					$idBillet = $this->getParametre($_POST, 'id');
-					$this->ctrlBillet->commenter($auteur, $contenu, $idBillet);
-				}
-				else if ($_GET['action'] == 'signaler') {
-					$idBillet = $this->getParametre($_POST, 'idBillet');
-					$idCom = $this->getParametre($_POST, 'idCom');
-					$this->ctrlBillet->signaler($idBillet, $idCom);
-				}
-				else if ($_GET['action'] == 'connexion') {
-					$this->ctrlAdmin->connexion();
-				} 
-				else if ($_GET['action'] == 'administration') {
-					$this->ctrlAdmin->admin();
-				}
-				else if ($_GET['action'] == 'creer') {
-					$titreBillet = $this->getParametre($_POST, 'titre');
-					$contenuBillet = $this->getParametre($_POST, 'contenu');
-					$this->ctrlAdmin->create($titreBillet, $contenuBillet);
-				}
-				else if($_GET['action'] == 'supprimer') {
-					$idBillet = $this->getParametre($_POST, 'idBillet');
-					$this->ctrlAdmin->suppress($idBillet);
-				}
-				else if($_GET['action'] == 'modifier') {
-					$idBillet = $this->getParametre($_POST, 'idBillet');
-					$titreBillet = $this->getParametre($_POST, 'titre');
-					$contenuBillet = $this->getParametre($_POST, 'contenus');
-					$this->ctrlAdmin->update($idBillet, $titreBillet, $contenuBillet);
-				}
-				else if ($_GET['action'] == 'moderer') {
-					$idCom = $this->getParametre($_POST, 'cid');
-					$modCom = $this->getParametre($_POST, 'modCom');
-					$this->ctrlAdmin->moderateCom($modCom, $idCom);
-				}
-				else
-					throw new Exception("Action non valide");
 			}
 			else { // Aucune action definie : affichage de l'accueil
 				$this->ctrlAccueil->accueil();
 			}
 		}
-		catch (Exception $e) {
-			$this->erreur($e->getMessage());
+			catch (Exception $e) {
+				$this->erreur($e->getMessage());
+			}
 		}
-	}
 
 	// Affiche une erreur
 	private function erreur($msgErreur) {

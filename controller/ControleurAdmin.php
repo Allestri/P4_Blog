@@ -19,10 +19,29 @@ class ControleurAdmin {
 		$vue->generer();
 	}
 	
+	public function deconnexion() {
+		session_unset();
+		session_destroy();
+		header('Location: index.php');
+	}
+	
+	
+	public function connexionAdmin() {
+		if(isset($_SESSION['userId'])) {
+		
+			$commentaires = $this->administration->getSignCom();
+			$billets = $this->billet->getBillets();
+			// Generation vue.
+			$vue = new View("Admin");
+			$vue->generer(array('billets' => $billets, 'commentaires' => $commentaires));
+		} else {
+			header('Location: index.php');
+			echo 'Mauvaise session';
+		}
+	}
+
 	// Espace administration
 	public function admin(){
-	
-	// if(isset($_SESSION['userId']) {
 		
 		if(isset($_POST['username']) && isset($_POST['password'])) {
 		
@@ -31,22 +50,20 @@ class ControleurAdmin {
 			$admin = $this->administration->getAccountInfo($username);
 			// $pass_hache = password_hash($password, PASSWORD_DEFAULT); 
 			$isPassCorrect = password_verify($password, $admin['pass']);
-			echo $isPassCorrect;
+			// echo $isPassCorrect;
 			if($username == 'Admin' && $isPassCorrect) {
 			
 				$_SESSION['userId'] = $username;
 				$commentaires = $this->administration->getSignCom();
 				// $admin = $this->administration->getAccountInfo($username);
-
-				//print_r($admin);
 					
 				$billets = $this->billet->getBillets();
 				// Generation vue.
 				$vue = new View("Admin");
 				$vue->generer(array('admin' => $admin, 'billets' => $billets, 'commentaires' => $commentaires));
 			} else {
-				echo 'Mauvais identifiant';
 				header('Location: index.php?action=connexion');
+				echo 'Mauvais identifiant';
 			}
 		}
 	}
