@@ -75,8 +75,13 @@ class Routeur {
 							$this->ctrlAdmin->suppress($idBillet);
 						break;
 						
+						case 'vueModifier':
+							$idBillet = $this->getParametre($_GET, 'id');
+							$this->ctrlAdmin->updateView($idBillet);
+						break;
+						
 						case 'modifier':
-							$idBillet = $this->getParametre($_POST, 'idBillet');
+							$idBillet = $this->getParametre($_GET, 'id');
 							$titreBillet = $this->getParametre($_POST, 'titre');
 							$contenuBillet = $this->getParametre($_POST, 'contenus');
 							$this->ctrlAdmin->update($idBillet, $titreBillet, $contenuBillet);

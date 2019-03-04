@@ -18,10 +18,10 @@
 					<div id="connexion">
 					<?php
 					if(isset($_SESSION['userId'])){
+						echo '<p><a href="index.php?action=administration" class="button-connexion">Administration</a></p>';
 						echo '<p><a href="index.php?action=deconnexion" class="button-connexion">Deconnexion</a></p>';
-						echo '<p><a href="index.php?action=connexionAdmin" class="button-connexion">Administration</a></p>';
 					}else {
-						echo '<form method="POST" action="index.php?action=administration">
+						echo '<form method="POST" action="index.php?action=connexionAdmin">
 						<p><input type="text" name="username" placeholder="Identifiant"/></p>
 						<p><input type="password" name="password" placeholder="Mot de passe"/></p>
 						<p><input type="submit" value="Connexion"></p>

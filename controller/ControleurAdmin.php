@@ -19,6 +19,14 @@ class ControleurAdmin {
 		$vue->generer();
 	}
 	
+	// Afficher formulaire Modif Billet
+	public function updateView($idBillet) {
+		$billet = $this->billet->getBillet($idBillet);
+		$vue = new View("Modifier");
+		$vue->generer(array("billet" => $billet));
+	}
+	
+	
 	public function deconnexion() {
 		session_unset();
 		session_destroy();
@@ -26,7 +34,7 @@ class ControleurAdmin {
 	}
 	
 	
-	public function connexionAdmin() {
+	public function admin() {
 		if(isset($_SESSION['userId'])) {
 		
 			$commentaires = $this->administration->getSignCom();
@@ -41,7 +49,7 @@ class ControleurAdmin {
 	}
 
 	// Espace administration
-	public function admin(){
+	public function connexionAdmin(){
 		
 		if(isset($_POST['username']) && isset($_POST['password'])) {
 		
@@ -51,13 +59,22 @@ class ControleurAdmin {
 			// $pass_hache = password_hash($password, PASSWORD_DEFAULT); 
 			$isPassCorrect = password_verify($password, $admin['pass']);
 			// echo $isPassCorrect;
+			
 			if($username == 'Admin' && $isPassCorrect) {
 			
 				$_SESSION['userId'] = $username;
 				$commentaires = $this->administration->getSignCom();
 				// $admin = $this->administration->getAccountInfo($username);
-					
-				$billets = $this->billet->getBillets();
+				
+				// Billets Croissant / Decroissant
+				$sortPost = "desc";
+				$_SESSION['sort'] = $sortPost;
+				
+				if($_SESSION['sort'] == 'desc') {
+					$billets = $this->billet->getBillets();
+					} else {
+					$billets = $this->billet->getBilletsAsc();
+				}
 				// Generation vue.
 				$vue = new View("Admin");
 				$vue->generer(array('admin' => $admin, 'billets' => $billets, 'commentaires' => $commentaires));
@@ -104,5 +121,6 @@ class ControleurAdmin {
 		$this->administration->update($idBillet, $titreBillet, $contenuBillet);
 		header('Location: index.php?action=administration');
 	}
+		
 
 }
