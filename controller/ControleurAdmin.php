@@ -7,6 +7,7 @@ require_once 'view/viewClass.php';
 class ControleurAdmin {
 
 	private $signCom;
+	public $order = "desc";
 
 	public function __construct() {
 		$this->administration = new Admin();
@@ -50,7 +51,7 @@ class ControleurAdmin {
 
 	// Espace administration
 	public function connexionAdmin(){
-		
+		$connexion = false;
 		if(isset($_POST['username']) && isset($_POST['password'])) {
 		
 			$username = ($_POST['username']);
@@ -59,29 +60,35 @@ class ControleurAdmin {
 			// $pass_hache = password_hash($password, PASSWORD_DEFAULT); 
 			$isPassCorrect = password_verify($password, $admin['pass']);
 			// echo $isPassCorrect;
-			
 			if($username == 'Admin' && $isPassCorrect) {
 			
 				$_SESSION['userId'] = $username;
-				$commentaires = $this->administration->getSignCom();
-				// $admin = $this->administration->getAccountInfo($username);
-				
-				// Billets Croissant / Decroissant
-				$sortPost = "desc";
-				$_SESSION['sort'] = $sortPost;
-				
-				if($_SESSION['sort'] == 'desc') {
-					$billets = $this->billet->getBillets();
-					} else {
-					$billets = $this->billet->getBilletsAsc();
-				}
-				// Generation vue.
-				$vue = new View("Admin");
-				$vue->generer(array('admin' => $admin, 'billets' => $billets, 'commentaires' => $commentaires));
+				$connexion = true;
 			} else {
-				header('Location: index.php?action=connexion');
-				echo 'Mauvais identifiant';
+				$connexion = false;
 			}
+		}
+		return $connexion;
+	}
+	
+	public function displayAdmin($order) {
+		if(isset($_SESSION['userId'])){
+			$commentaires = $this->administration->getSignCom();
+			// $admin = $this->administration->getAccountInfo($username);
+				
+			// Billets Croissant / Decroissant
+			// $sortPost = "desc";
+			$_SESSION['sort'] = $order;
+			if($_SESSION['sort'] == 'desc') {
+				$billets = $this->billet->getBillets();
+				} else {
+				$billets = $this->billet->getBilletsAsc();
+			}
+			// Generation vue.
+			$vue = new View("Admin");
+			$vue->generer(array('admin' => $_SESSION['userId'], 'billets' => $billets, 'commentaires' => $commentaires));
+		} else {
+			header('Location: index.php');
 		}
 	}
 	
@@ -98,6 +105,7 @@ class ControleurAdmin {
 	}
 	
 	
+	//--- CRUD ---//
 	
 	
 	// Creation Billet

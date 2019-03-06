@@ -8,7 +8,7 @@ class Billet extends Model
 	public function getBillets()
 	{
 		$sql = 'select BIL_ID as id, DATE_FORMAT(BIL_DATE, \'%d/%m/%Y à %Hh%imin%ss\') 
-		AS date_fr, BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET order by BIL_ID asc';
+		AS date_fr, BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET order by BIL_ID desc';
 		$billets = $this->executerRequete($sql);
 		return $billets->fetchAll();
 	}

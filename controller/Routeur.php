@@ -45,23 +45,25 @@ class Routeur {
 							$idCom = $this->getParametre($_POST, 'idCom');
 							$this->ctrlBillet->signaler($idBillet, $idCom);
 						break;
-							
-						case 'connexion':
-						
-							$this->ctrlAdmin->connexion();
-						break;
 						
 						case 'deconnexion':
 							$this->ctrlAdmin->deconnexion();
 						break;
 						
 						case 'administration':
-						
-							$this->ctrlAdmin->admin();
+							$order = $this->getParametre($_GET, 'sort');
+							$this->ctrlAdmin->displayAdmin($order);
 						break;
 						
 						case 'connexionAdmin':
-							$this->ctrlAdmin->connexionAdmin();
+							$connexion = $this->ctrlAdmin->connexionAdmin();
+							if($connexion){
+								$order = "desc";
+								$this->ctrlAdmin->displayAdmin($order);
+							} else {
+								throw new Exception("Erreur de connexion");
+							}
+							
 						break;
 						
 						case 'creer':
@@ -71,7 +73,7 @@ class Routeur {
 						break;
 						
 						case 'supprimer':
-							$idBillet = $this->getParametre($_POST, 'idBillet');
+							$idBillet = $this->getParametre($_GET, 'id');
 							$this->ctrlAdmin->suppress($idBillet);
 						break;
 						

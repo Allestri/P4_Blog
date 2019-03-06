@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 		<!-- Tiny MCE -->
 		<script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=gx3hkd8a680littsdy0nnyqcg5rzlnpkda583h04kotftzma"></script>
-		<script>tinymce.init({ selector:'textarea' });</script>
+		<script>tinymce.init({ selector:'textarea#editable' });</script>
 	</head>
 	<body>
 		<div id="container">
@@ -18,7 +18,7 @@
 					<div id="connexion">
 					<?php
 					if(isset($_SESSION['userId'])){
-						echo '<p><a href="index.php?action=administration" class="button-connexion">Administration</a></p>';
+						echo '<p><a href="index.php?action=administration&sort=desc" class="button-connexion">Administration</a></p>';
 						echo '<p><a href="index.php?action=deconnexion" class="button-connexion">Deconnexion</a></p>';
 					}else {
 						echo '<form method="POST" action="index.php?action=connexionAdmin">

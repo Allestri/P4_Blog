@@ -3,28 +3,25 @@
 	<div id="admin">
 		<h1>Administration</h1>
 		<div class="buttonRow">
-			<a href="index.php?action=administration?sort=desc" class="button left">Newer</a>
-			<a href="index.php?action=administration?sort=asc" class="button right">Older</a>
+			<a href="index.php?action=administration&sort=desc" class="button left">Plus Récent</a>
+			<a href="index.php?action=administration&sort=asc" class="button right">Plus Ancien</a>
 		</div>
+		<div id="billet-wrapper">
 		<?php
-		foreach ($billets as $billet): ?>
-		<div class="billet">
-			<a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>">
-				<h3><?= $billet['titre'] ?></h1>
-			</a>
-			<a href="<?= "index.php?action=vueModifier&id=". $billet['id'] ?>" class="far fa-edit"></a>
-			<a href="index.php?supprimer" class="far fa-trash-alt"></a>
+			foreach ($billets as $billet): ?>
+			<div class="billet">
+				<a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>">
+					<h3><?= $billet['titre'] ?></h1>
+				</a>
+				<div class="buttonAdmin">
+					<a href="<?= "index.php?action=vueModifier&id=" . $billet['id'] ?>" class="fas fa-pen-square"></a>
+					<a href="<?= "index.php?action=supprimer&id=" . $billet['id'] ?>" class="fas fa-trash"></a>
+				</div>
+			</div>
+			<?php endforeach; ?>
 		</div>
-		<?php endforeach; ?>
 	</div>
 		
-	<?php
-	print_r($_SESSION['sort']);
-	/* foreach ($admin as $pseudo): ?>
-	<p>Nom: <?= $pseudo['name'] ?></p>
-	<p>Mot de passe: <?= $pseudo['pass'] ?></p>
-	<?php endforeach; */?> 
-
 	<div id="moderation">
 		<h1>Modération commentaire</h1>
 		<?php
