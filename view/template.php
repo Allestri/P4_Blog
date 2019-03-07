@@ -33,6 +33,7 @@
 			</div>
 			<div id="superwrapper">
 				<div id"="contenu">
+					<?= $content ?> 
 					<div id="status">
 						<?php
 							if(isset($_SESSION['userId'])) {
@@ -42,7 +43,6 @@
 							}
 							?>
 					</div>
-					<?= $content ?> 
 				</div>
 			</div>
 			<footer id="piedBlog">

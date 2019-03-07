@@ -91,7 +91,7 @@ Header / Connexion
 #wrapper-home
 {
 	margin:auto;
-	width:90%;
+	width:70%;
 	background-color:#FFFDFF;
 	display:flex;
 	flex-direction:column;
@@ -108,6 +108,60 @@ Header / Connexion
 	text-align:center;
 	line-height:100px;
 	margin-bottom:40px;
+}
+
+/* 
+==========================
+Espace Billet & Commentaires
+==========================
+*/
+
+#wrapper-comment
+{
+	background-color:#F9F9F9;
+	padding: 20px 20px 0px;
+}
+
+
+
+
+.box
+{
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,.19);
+}
+
+.comment
+{
+	background-color:#FFFFFF;
+	width:100%;
+}
+
+
+.billet
+{
+	border: 1px solid black;
+	margin-bottom:50px;
+}
+
+.commentInfo
+{
+	position:relative;
+	/* background-color:grey; */
+	height:25px;
+}
+
+.commentInfo button
+{
+	position:absolute;
+	left:95%;
+	top:10%;
+}
+
+
+
+.block-separator
+{
+	width:550px;
 }
 
 
@@ -153,7 +207,7 @@ Administration & Modération
 	/* background-color:grey; */
 }
 
-.billet
+.adminbillet
 {
 	display:flex;
 	flex-direction:row;

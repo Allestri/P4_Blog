@@ -10,7 +10,7 @@
 		<div id="billet-wrapper">
 		<?php
 			foreach ($billets as $billet): ?>
-			<div class="billet">
+			<div class="adminbillet">
 				<a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>">
 					<h3><?= $billet['titre'] ?></h1>
 				</a>
