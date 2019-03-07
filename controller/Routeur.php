@@ -67,8 +67,8 @@ class Routeur {
 						break;
 						
 						case 'creer':
-							$titreBillet = $this->getParametre($_POST, 'titre');
-							$contenuBillet = $this->getParametre($_POST, 'contenu');
+							$titreBillet = $this->getParametre($_POST, 'title');
+							$contenuBillet = $this->getParametre($_POST, 'content');
 							$this->ctrlAdmin->create($titreBillet, $contenuBillet);
 						break;
 						
@@ -80,6 +80,10 @@ class Routeur {
 						case 'vueModifier':
 							$idBillet = $this->getParametre($_GET, 'id');
 							$this->ctrlAdmin->updateView($idBillet);
+						break;
+						
+						case 'create':
+							$this->ctrlAdmin->createView();
 						break;
 						
 						case 'modifier':

@@ -3,6 +3,7 @@
 	<div id="admin">
 		<h1>Administration</h1>
 		<div class="buttonRow">
+			<a href="index.php?action=create">Creer Billet</a>
 			<a href="index.php?action=administration&sort=desc" class="button left">Plus Récent</a>
 			<a href="index.php?action=administration&sort=asc" class="button right">Plus Ancien</a>
 		</div>

@@ -7,7 +7,6 @@ require_once 'view/viewClass.php';
 class ControleurAdmin {
 
 	private $signCom;
-	public $order = "desc";
 
 	public function __construct() {
 		$this->administration = new Admin();
@@ -20,13 +19,18 @@ class ControleurAdmin {
 		$vue->generer();
 	}
 	
+	// Afficher formulaire Creation billet
+	public function createView(){
+		$vue = new View("Create");
+		$vue->generer();
+	}
+	
 	// Afficher formulaire Modif Billet
 	public function updateView($idBillet) {
 		$billet = $this->billet->getBillet($idBillet);
 		$vue = new View("Modifier");
 		$vue->generer(array("billet" => $billet));
 	}
-	
 	
 	public function deconnexion() {
 		session_unset();
@@ -101,7 +105,7 @@ class ControleurAdmin {
 	// Moderer commentaire
 	public function moderateCom($contenus, $idCommentaire){
 		$this->administration->modSignCom($contenus, $idCommentaire);
-		header('Location: index.php?action=administration');
+		header('Location: index.php?action=administration?sort=desc');
 	}
 	
 	
@@ -109,17 +113,17 @@ class ControleurAdmin {
 	
 	
 	// Creation Billet
-	public function create($titre, $contenu)
+	public function create($title, $content)
 	{
-		$this->administration->create($titre, $contenu);
-		header('Location: index.php?action=administration');
+		$this->administration->create($title, $content);
+		header('Location: index.php?action=administration&sort=desc');
 	}
 	
 	// Suppression Billet
 	public function suppress($idBillet)
 	{
 		$this->administration->suppress($idBillet);
-		header('Location: index.php?action=administration');
+		header('Location: index.php?action=administration?sort=desc');
 	}
 	
 	
@@ -127,7 +131,7 @@ class ControleurAdmin {
 	public function update($idBillet, $titreBillet, $contenuBillet)
 	{
 		$this->administration->update($idBillet, $titreBillet, $contenuBillet);
-		header('Location: index.php?action=administration');
+		header('Location: index.php?action=administration?sort=desc');
 	}
 		
 

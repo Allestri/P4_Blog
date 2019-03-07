@@ -35,10 +35,10 @@ Class Admin extends Model
 	//
 	
 	// Creation Billet
-	public function create($titre, $contenu)
+	public function create($titre, $content)
 	{
 		$sql = "INSERT INTO t_billet(BIL_DATE, BIL_TITRE, BIL_CONTENU) VALUES(NOW(), ?, ?)";
-		$this->executerRequete($sql, array($titre, $contenu));
+		$this->executerRequete($sql, array($titre, $content));
 	}
 	
 	// Suppression Billet
