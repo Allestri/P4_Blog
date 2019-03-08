@@ -11,6 +11,12 @@ class Commentaire extends Model {
 		$commentairest = $this->executerRequete($sql, array($idBillet));
 	return $commentairest;
 	}
+	
+	public function countComments($idBillet) {
+		$sql = "select count(*) as nbcomments from T_COMMENTAIRE where BIL_ID=?";
+		$commentNumber = $this->executerRequete($sql, array($idBillet));
+	return $commentNumber->fetch();
+	}
   
 	// Ajouter un commentaire dans la base
 	public function ajouterCommentaire($auteur, $contenu, $idBillet) {

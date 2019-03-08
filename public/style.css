@@ -37,6 +37,8 @@ Header / Connexion
 	background-color:#FFFDFF;
 	margin-bottom:40px;
 	line-height:100%;
+	box-shadow: 0px 3px 4px 0px rgba(193,221,245,0.8);
+
 }
 
 
@@ -118,24 +120,57 @@ Espace Billet & Commentaires
 
 #wrapper-comment
 {
-	background-color:#F9F9F9;
-	padding: 20px 20px 0px;
+	background-color:#f6f6f6;
+	padding: 20px 20px 20px;
 }
 
+#commentform
+{
+	width:70%;
+	margin:auto;
+	/* background-color:red; */
+	display:flex;
+	flex-direction:row;
+	justify-content:space-between;
+}
 
+.commentTitle 
+{
+    font-size : 1.5em;
+	line-height:50px;
+	text-align:center;
+	background-color:#e2f1ff;
+}
 
+.form-bloc
+{
+	width:30%;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+}
+
+.submit
+{
+	width:50%;
+	margin:auto;
+}
+
+#commentform input[type=text]
+{
+	width:70%;
+}
+
+#commentformcontent 
+{
+	margin-top:10px;
+    width: 95%;
+}
 
 .box
 {
-	box-shadow: 0 1px 3px 0 rgba(0,0,0,.19);
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,.2);
 }
-
-.comment
-{
-	background-color:#FFFFFF;
-	width:100%;
-}
-
 
 .billet
 {
@@ -143,11 +178,19 @@ Espace Billet & Commentaires
 	margin-bottom:50px;
 }
 
+.comment
+{
+	margin:25px 0px;
+	padding:20px 20px;
+	background-color:#FFFFFF;
+	width:96%;
+}
+
 .commentInfo
 {
 	position:relative;
-	/* background-color:grey; */
 	height:25px;
+	line-height:25px;
 }
 
 .commentInfo button
@@ -156,8 +199,6 @@ Espace Billet & Commentaires
 	left:95%;
 	top:10%;
 }
-
-
 
 .block-separator
 {
@@ -293,16 +334,9 @@ Forms
 {
 	height:50px;
 	line-height:50px;
+	background-color:#FFFDFF;
 }
 
 #titreBlog, #piedBlog {
     text-align: center;
-}
-
-#titreReponses {
-    font-size : 100%;
-}
-
-#txtCommentaire {
-    width: 50%;
 }

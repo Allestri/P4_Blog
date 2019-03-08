@@ -18,8 +18,10 @@ class ControleurBillet {
 	public function billet($idBillet) {
 		$billet = $this->billet->getBillet($idBillet);
 		$commentaires = $this->commentaire->getCommentaires($idBillet);
+		$commentNumber = $this->commentaire->countComments($idBillet);
+		/* var_dump($commentNumber['nbcomments']); */
 		$vue = new View("Billet");
-		$vue->generer(array('billet' => $billet, 'commentairest' => $commentaires));
+		$vue->generer(array('billet' => $billet, 'commentairest' => $commentaires, 'commentNumber' => $commentNumber));
 	}
   
 	// Ajoute un commentaire

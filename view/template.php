@@ -31,8 +31,7 @@
 					</div>
 					
 			</div>
-			<div id="superwrapper">
-				<div id"="contenu">
+			<div id="wrapper">
 					<?= $content ?> 
 					<div id="status">
 						<?php
@@ -43,7 +42,6 @@
 							}
 							?>
 					</div>
-				</div>
 			</div>
 			<footer id="piedBlog">
 				Blog réalisé avec PHP, HTML5 et CSS.

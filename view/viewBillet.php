@@ -12,7 +12,7 @@
 	
 	<div id="wrapper-comment">
 		<header class="box">
-		  <h1 id="titreReponses">Il y a 52 commentaires à <?= $billet['titre'] ?></h1>
+		  <h1 class="commentTitle">Il y a <?= $commentNumber['nbcomments'] ?> commentaires à <?= $billet['titre'] ?></h1>
 		</header>
 
 		<?php foreach ($commentairest as $commentaire): ?>
@@ -28,12 +28,18 @@
 		  <p><?= $commentaire['contenu'] ?></p>
 		</div>
 		<?php endforeach; ?>
-
-		<form method="post" action="index.php?action=commenter">
-			<input id="auteur" name="auteur" type="text" placeholder="Votre pseudo" required /><br />
-			<textarea id="txtCommentaire" name="contenu" rows="4" placeholder="Votre commentaire" required></textarea><br />
-			<input type="hidden" name="id" value="<?= $billet['id'] ?>" />
-			<input type="submit" value="Commenter" />
+		<header class="box">
+			<h2 class="commentTitle">Commentez</h2>
+		</header>
+		<form id="commentform" method="post" action="index.php?action=commenter">
+			<div class="form-bloc">
+				<input id="auteur" name="auteur" type="text" placeholder="Votre pseudo" required /><br />
+				<textarea id="commentformcontent" name="contenu" rows="8" placeholder="Votre commentaire" required></textarea><br />
+				<input type="hidden" name="id" value="<?= $billet['id'] ?>" />
+			</div>
+			<div class="form-bloc">
+				<input type="submit" class="button submit" value="Poster" />
+			</div>
 		</form>
 	</div>
 </div>
