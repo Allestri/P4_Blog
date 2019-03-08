@@ -189,15 +189,15 @@ Espace Billet & Commentaires
 .commentInfo
 {
 	position:relative;
-	height:25px;
-	line-height:25px;
+	height:35px;
+	line-height:35px;
 }
 
-.commentInfo button
+.signaler
 {
 	position:absolute;
-	left:95%;
-	top:10%;
+	right:0%;
+	top:0%;
 }
 
 .block-separator
@@ -240,7 +240,26 @@ Administration & Modération
 {
 	width:45%;
 	padding: 20px 20px;
-	background-color:#FFFDFF;
+	background-color:#f6f6f6;
+}
+
+#moderation h1
+{
+	text-align:center;
+}
+
+.fa-exclamation-triangle
+{
+	font-size:2em;
+	margin:10px;
+	color:#ff3939;
+}
+
+
+.moderationstatus
+{
+	font-size: 1.5em;
+	display:inline-block;
 }
 
 .modCommentaire

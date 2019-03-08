@@ -78,6 +78,7 @@ class ControleurAdmin {
 	public function displayAdmin($order) {
 		if(isset($_SESSION['userId'])){
 			$commentaires = $this->administration->getSignCom();
+			$commentnbr = $this->administration->countSignCom();
 			// $admin = $this->administration->getAccountInfo($username);
 				
 			// Billets Croissant / Decroissant
@@ -90,7 +91,7 @@ class ControleurAdmin {
 			}
 			// Generation vue.
 			$vue = new View("Admin");
-			$vue->generer(array('admin' => $_SESSION['userId'], 'billets' => $billets, 'commentaires' => $commentaires));
+			$vue->generer(array('admin' => $_SESSION['userId'], 'billets' => $billets, 'commentaires' => $commentaires, 'signcomnbr' => $commentnbr));
 		} else {
 			header('Location: index.php');
 		}
@@ -102,10 +103,19 @@ class ControleurAdmin {
 		$commentaires = $this->administration->getSignCom();
 	}
 	
+	//-- Modération --//
+
+	
 	// Moderer commentaire
 	public function moderateCom($contenus, $idCommentaire){
 		$this->administration->modSignCom($contenus, $idCommentaire);
-		header('Location: index.php?action=administration?sort=desc');
+		header('Location: index.php?action=administration&sort=desc');
+	}
+	
+	// Suppression commentaire
+	public function suppressCom($idCommentaire){
+		$this->administration->suppressCom($idCommentaire);
+		header('Location: index.php?action=administration&sort=desc');
 	}
 	
 	

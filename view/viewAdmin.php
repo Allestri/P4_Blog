@@ -25,9 +25,13 @@
 		
 	<div id="moderation">
 		<h1>Modération commentaire</h1>
+		<div class="box">
+			<i class="fas fa-exclamation-triangle"></i>
+			<h2 class="moderationstatus">Il y a actuellement <?= $signcomnbr['nbsigncoms'] ?> commentaires à modérer<h2>
+		</div>
 		<?php
 		foreach ($commentaires as $signComs): ?>
-		<div class="modCommentaire">
+		<div class="comment box">
 			<article>
 				<header>
 				<!-- Titre du commentaire !-->
@@ -40,6 +44,7 @@
 					<input type="text" name="modCom" />
 					<button>Modérer commentaire</button>
 				</form>
+				<a href="index.php?action=suppresscom&id=<?= $signComs['COM_ID'] ?>">Supprimer Commentaire</a>
 			</article>
 		</div>
 		<?php endforeach; ?>

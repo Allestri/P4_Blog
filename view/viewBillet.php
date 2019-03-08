@@ -21,7 +21,15 @@
 			<form method="post" action="index.php?action=signaler">
 				<input type="hidden" name="idBillet" value="<?= $billet['id'] ?>" />
 				<input type="hidden" name="idCom" value="<?= $commentaire['id'] ?>" />
-				<button class="fas fa-exclamation-circle"></button>
+				<div class="signaler">
+				<?php
+					if($commentaire['signaler'] == 1){
+						echo "Ce contenu a déjà été signalé";
+					} else {
+						echo '<button class="fas fa-exclamation-circle"></button>';
+					};
+					?>
+				</div>
 			</form>
 		  </div>
 

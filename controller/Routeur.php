@@ -98,6 +98,12 @@ class Routeur {
 							$modCom = $this->getParametre($_POST, 'modCom');
 							$this->ctrlAdmin->moderateCom($modCom, $idCom);
 						break;
+						
+						case 'suppresscom':
+							$idCom = $this->getParametre($_GET, 'id');
+							$this->ctrlAdmin->suppressCom($idCom);
+						break;
+						
 						default:
 							throw new Exception("Action non valide");
 				}

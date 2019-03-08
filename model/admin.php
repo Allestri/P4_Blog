@@ -18,20 +18,31 @@ Class Admin extends Model
 	// Liste commentaires signalés
 	public function getSignCom()
 	{
-		$sql = "SELECT * FROM `t_commentaire` WHERE COM_SIGNALER = 1";
+		$sql = "SELECT * FROM `t_commentaire` WHERE COM_SIGNALER = 1 AND COM_MODERE = 0";
 		$signCom = $this->executerRequete($sql);
 		return $signCom;
+	}
+	
+	// Nombre commentaire à moderer
+	public function countSignCom()
+	{
+		$sql = "select count(*) as nbsigncoms from T_COMMENTAIRE where COM_SIGNALER = 1 AND COM_MODERE = 0";
+		$commentSignNumber = $this->executerRequete($sql);
+	return $commentSignNumber->fetch();
 	}
 	
 	// Modérer commentaire signalés
 	public function modSignCom($contenus, $idCommentaire)
 	{
-		$sql = 'UPDATE t_commentaire SET COM_CONTENU = ? WHERE COM_ID = ?';
+		$sql = 'UPDATE t_commentaire SET COM_MODERE = 1, COM_CONTENU = ? WHERE COM_ID = ?';
 		$this->executerRequete($sql, array($contenus, $idCommentaire));
 	}
 
 	// Supprimer commentaire signalé 
-	
+	public function suppressCom($idCommentaire){
+		$sql = "DELETE FROM t_commentaire WHERE COM_ID = ?";
+		$this->executerRequete($sql, array($idCommentaire));
+	}
 	//
 	
 	// Creation Billet
