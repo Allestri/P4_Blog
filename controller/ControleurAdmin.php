@@ -32,6 +32,13 @@ class ControleurAdmin {
 		$vue->generer(array("billet" => $billet));
 	}
 	
+	// Afficher logs modération
+	public function logsView(){
+		$logs = $this->administration->getLogs();
+		$vue = new View("Logs");
+		$vue->generer(array("logs" => $logs));
+	}
+	
 	public function deconnexion() {
 		session_unset();
 		session_destroy();
@@ -91,7 +98,7 @@ class ControleurAdmin {
 			}
 			// Generation vue.
 			$vue = new View("Admin");
-			$vue->generer(array('admin' => $_SESSION['userId'], 'billets' => $billets, 'commentaires' => $commentaires, 'signcomnbr' => $commentnbr));
+			$vue->generer(array('admin' => $_SESSION['userId'], 'billets' => $billets, 'commentaires' => $commentaires, 'signComNbr' => $commentnbr));
 		} else {
 			header('Location: index.php');
 		}
@@ -108,12 +115,14 @@ class ControleurAdmin {
 	
 	// Moderer commentaire
 	public function moderateCom($contenus, $idCommentaire){
+		$this->administration->insertLogs($idCommentaire);
 		$this->administration->modSignCom($contenus, $idCommentaire);
 		header('Location: index.php?action=administration&sort=desc');
 	}
 	
 	// Suppression commentaire
 	public function suppressCom($idCommentaire){
+		$this->administration->insertLogs($idCommentaire);
 		$this->administration->suppressCom($idCommentaire);
 		header('Location: index.php?action=administration&sort=desc');
 	}

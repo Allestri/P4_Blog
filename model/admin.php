@@ -14,13 +14,19 @@ Class Admin extends Model
 		return $admin->fetch();
 	}
 	
-	
 	// Liste commentaires signalés
 	public function getSignCom()
 	{
 		$sql = "SELECT * FROM `t_commentaire` WHERE COM_SIGNALER = 1 AND COM_MODERE = 0";
 		$signCom = $this->executerRequete($sql);
 		return $signCom;
+	}
+	
+	public function getLogs()
+	{
+		$sql = "SELECT log_id as log_id, com_id as id, com_date AS date_fr, author AS author, content AS content, post_id AS post_id, log_date AS log_date FROM logs ORDER BY log_id DESC";
+		$logs = $this->executerRequete($sql);
+		return $logs->fetchAll();
 	}
 	
 	// Nombre commentaire à moderer
@@ -43,7 +49,13 @@ Class Admin extends Model
 		$sql = "DELETE FROM t_commentaire WHERE COM_ID = ?";
 		$this->executerRequete($sql, array($idCommentaire));
 	}
-	//
+	
+	// Insertion logs moderation
+	public function insertLogs($idCommentaire){
+		$sql ="INSERT INTO logs(com_id, com_date, author, content, post_id, signale, modere) 
+				SELECT com_id, com_date, com_auteur, com_contenu, bil_id, com_signaler, com_modere FROM t_commentaire WHERE com_id = ?";
+		$this->executerRequete($sql, array($idCommentaire));
+	}
 	
 	// Creation Billet
 	public function create($titre, $content)

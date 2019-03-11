@@ -26,8 +26,19 @@
 	<div id="moderation">
 		<h1>Modération commentaire</h1>
 		<div class="box">
-			<i class="fas fa-exclamation-triangle"></i>
-			<h2 class="moderationstatus">Il y a actuellement <?= $signcomnbr['nbsigncoms'] ?> commentaires à modérer<h2>
+		<?php 
+			if($signComNbr['nbsigncoms'] > 0) {
+				echo "<i class='fas fa-exclamation-triangle'></i>
+					<h2 class='moderationstatus'>Il y a actuellement " . $signComNbr['nbsigncoms'] . " commentaires à modérer<h2>";
+			} else {
+				echo "<i class='fas fa-check-circle'></i>
+					<h2 class='moderationstatus'>Tout va bien</h2>";
+			}
+			?>
+		</div>
+		<div class="box">
+			<i class='fas fa-history'></i>
+			<h2 class="moderationstatus"><a href='index.php?action=logs'>Accéder à l'historique de modération</a></h2>
 		</div>
 		<?php
 		foreach ($commentaires as $signComs): ?>

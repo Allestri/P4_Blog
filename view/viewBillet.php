@@ -1,13 +1,15 @@
 <?php $title = "Mon Blog - " . $billet['titre']; ?>
 
 <div id="wrapper-home">
-	<article class="billet">
-	  <header>
-		<h1 class="titreBillet"><?= $billet['titre'] ?></h1>
-		<time><?= $billet['date_fr'] ?></time>
-	  </header>
-	  <p><?= $billet['contenu'] ?></p>
-	</article>
+	<div id="wrapper-post">
+		<article class="billet">
+		  <header>
+			<h1 class="titreBillet"><?= $billet['titre'] ?></h1>
+			<time><?= $billet['date_fr'] ?></time>
+		  </header>
+		  <p><?= $billet['contenu'] ?></p>
+		</article>
+	</div>
 	<hr class="block-separator">
 	
 	<div id="wrapper-comment">

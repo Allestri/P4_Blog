@@ -86,6 +86,10 @@ class Routeur {
 							$this->ctrlAdmin->createView();
 						break;
 						
+						case 'logs':
+							$this->ctrlAdmin->logsView();
+						break;
+						
 						case 'modifier':
 							$idBillet = $this->getParametre($_GET, 'id');
 							$titreBillet = $this->getParametre($_POST, 'titre');
