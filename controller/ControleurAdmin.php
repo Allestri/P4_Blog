@@ -142,7 +142,7 @@ class ControleurAdmin {
 	public function suppress($idBillet)
 	{
 		$this->administration->suppress($idBillet);
-		header('Location: index.php?action=administration?sort=desc');
+		header('Location: index.php?action=administration&sort=desc');
 	}
 	
 	
@@ -150,7 +150,7 @@ class ControleurAdmin {
 	public function update($idBillet, $titreBillet, $contenuBillet)
 	{
 		$this->administration->update($idBillet, $titreBillet, $contenuBillet);
-		header('Location: index.php?action=administration?sort=desc');
+		header('Location: index.php?action=administration&sort=desc');
 	}
 		
 

@@ -93,8 +93,8 @@ class Routeur {
 						
 						case 'modifier':
 							$idBillet = $this->getParametre($_GET, 'id');
-							$titreBillet = $this->getParametre($_POST, 'titre');
-							$contenuBillet = $this->getParametre($_POST, 'contenus');
+							$titreBillet = $this->getParametre($_POST, 'title');
+							$contenuBillet = $this->getParametre($_POST, 'content');
 							$this->ctrlAdmin->update($idBillet, $titreBillet, $contenuBillet);
 						break;
 						
