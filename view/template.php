@@ -13,7 +13,10 @@
 	<body>
 		<div id="container">
 			<div id="header">
-				<a href="index.php"><h1 id="titreBlog">Billet simple pour l'Alaska</h1></a>
+				<div id="brand">
+					<img id="logo" src="public/images/logo.png" alt="Logo Blog" />
+					<a href="index.php"><h1 id="titreBlog">Billet simple pour l'Alaska</h1></a>
+				</div>
 					
 					<div id="connexion">
 					<?php

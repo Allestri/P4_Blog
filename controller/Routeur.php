@@ -38,6 +38,7 @@ class Routeur {
 							$contenu = $this->getParametre($_POST, 'contenu');
 							$idBillet = $this->getParametre($_POST, 'id');
 							$this->ctrlBillet->commenter($auteur, $contenu, $idBillet);
+						break;
 							
 						case 'signaler':
 						

@@ -33,7 +33,7 @@ Header / Connexion
 	height:70px;
 	display:flex;
 	flex-direction:row;
-	justify-content:space-between;
+	justify-content:space-around;
 	background-color:#FFFDFF;
 	margin-bottom:40px;
 	line-height:100%;
@@ -41,6 +41,16 @@ Header / Connexion
 
 }
 
+#logo
+{
+	width:60px;
+	height:60px;
+}
+
+#titreBlog
+{
+	display:inline-block;
+}
 
 #connexion
 {
@@ -124,7 +134,7 @@ Espace Billet & Commentaires
 	padding: 20px 20px 20px;
 }
 
-#wrapper-postwamp
+#wrapper-post
 {
 	background-color:#f6f6f6;
 	padding: 20px 20px 20px;
@@ -180,8 +190,7 @@ Espace Billet & Commentaires
 
 .billet
 {
-	border: 1px solid black;
-	margin-bottom:50px;
+	padding:20px;
 	background-color:#FFFFFF;
 }
 

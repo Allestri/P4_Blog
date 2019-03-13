@@ -10,7 +10,7 @@
 		  <p><?= $billet['contenu'] ?></p>
 		</article>
 	</div>
-	<hr class="block-separator">
+	<!-- <hr class="block-separator">-->
 	
 	<div id="wrapper-comment">
 		<header class="box">
