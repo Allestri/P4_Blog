@@ -2,7 +2,7 @@
 
 <div id="wrapper-home">
 	<div id="wrapper-post">
-		<article class="billet">
+		<article class="billet box">
 		  <header>
 			<h1 class="titreBillet"><?= $billet['titre'] ?></h1>
 			<time><?= $billet['date_fr'] ?></time>

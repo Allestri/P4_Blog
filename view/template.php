@@ -14,11 +14,13 @@
 		<div id="container">
 			<div id="header">
 				<div id="brand">
-					<img id="logo" src="public/images/logo.png" alt="Logo Blog" />
-					<a href="index.php"><h1 id="titreBlog">Billet simple pour l'Alaska</h1></a>
+					<a href="index.php">
+						<img id="logo" src="public/images/logo.png" alt="Logo Blog Alaska" title="by anbileru adaleru from the Noun Project" />
+					</a>
+					<h1 id="titreBlog">Billet simple pour l'Alaska</h1>
 				</div>
 					
-					<div id="connexion">
+				<div id="connexion">
 					<?php
 					if(isset($_SESSION['userId'])){
 						echo '<p><a href="index.php?action=administration&sort=desc" class="button-connexion">Administration</a></p>';
@@ -27,11 +29,11 @@
 						echo '<form method="POST" action="index.php?action=connexionAdmin">
 						<p><input type="text" name="username" placeholder="Identifiant"/></p>
 						<p><input type="password" name="password" placeholder="Mot de passe"/></p>
-						<p><input type="submit" value="Connexion"></p>
+						<p><input type="submit" class="button-connexion" value="Connexion"></p>
 						</form>';
 					}
 					?>
-					</div>
+				</div>
 					
 			</div>
 			<div id="wrapper">
@@ -46,7 +48,7 @@
 							?>
 					</div>
 			</div>
-			<footer id="piedBlog">
+			<footer>
 				Blog réalisé avec PHP, HTML5 et CSS.
 			</footer>
 		</div>
