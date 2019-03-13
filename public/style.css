@@ -60,13 +60,22 @@ Header & Connexion
 	margin-right:20px;
 }
 
-
 #connexion
 {
-	width:25%;
+	width:30%;
 	display:flex;
 	flex-direction:row;
 	justify-content:space-around;
+	align-items:center;
+}
+
+#login
+{
+	width:150px;
+	height:150px;
+	background-color:red;
+	display:flex;
+	flex-direction:row;
 }
 
 
@@ -75,6 +84,7 @@ Header & Connexion
 	-moz-border-radius:8px;
 	-webkit-border-radius:8px;
 	border-radius:8px;
+	border:0px;
 	display:inline-block;
 	cursor:pointer;
 	color:#fffdff;

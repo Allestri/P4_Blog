@@ -17,7 +17,7 @@
 					<a href="index.php">
 						<img id="logo" src="public/images/logo.png" alt="Logo Blog Alaska" title="by anbileru adaleru from the Noun Project" />
 					</a>
-					<h1 id="titreBlog">Billet simple pour l'Alaska</h1>
+					<h1 id="titreBlog"><a href="index.php">Billet simple pour l'Alaska</a></h1>
 				</div>
 					
 				<div id="connexion">
@@ -27,9 +27,9 @@
 						echo '<p><a href="index.php?action=deconnexion" class="button-connexion">Deconnexion</a></p>';
 					}else {
 						echo '<form method="POST" action="index.php?action=connexionAdmin">
-						<p><input type="text" name="username" placeholder="Identifiant"/></p>
-						<p><input type="password" name="password" placeholder="Mot de passe"/></p>
-						<p><input type="submit" class="button-connexion" value="Connexion"></p>
+						<input type="text" name="username" placeholder="Identifiant" required/>
+						<input type="password" name="password" placeholder="Mot de passe" required/>
+						<input type="submit" class="button-connexion" value="Connexion">
 						</form>';
 					}
 					?>
