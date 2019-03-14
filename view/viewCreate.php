@@ -1,8 +1,9 @@
 <div id="wrapper-home">
-	<h2>Créer un Billet</h2>
+	<div id="wrapper-create">
+		<h2>Créer un Billet</h2>
 		<form method="POST" action="index.php?action=creer" id="creer_form">
-			<input type="text" name="titre" placeholder="Titre" /><br/>
-			<textarea id="editable" rows="4" cols="20" name="content" placeholder="Contenus de votre billet" form="creer_form"></textarea>
+			<input type="text" name="title" placeholder="Titre" /><br/>
+			<textarea id="editable" rows="30" cols="20" name="content" placeholder="Contenus de votre billet" form="creer_form"></textarea>
 		</form>
 	</div>
 	<div class="buttonRow">

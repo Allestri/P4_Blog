@@ -13,38 +13,41 @@
 	<body>
 		<div id="container">
 			<div id="header">
-				<a href="index.php"><h1 id="titreBlog">Billet simple pour l'Alaska</h1></a>
+				<div id="brand">
+					<a href="index.php">
+						<img id="logo" src="public/images/logo2.png" alt="Logo Blog" title="Logo Alaska" />
+					</a>
+					<h1 id="titreBlog"><a href="index.php">Billet simple pour l'Alaska</a></h1>
+				</div>
 					
-					<div id="connexion">
+				<div id="login">
 					<?php
 					if(isset($_SESSION['userId'])){
 						echo '<p><a href="index.php?action=administration&sort=desc" class="button-connexion">Administration</a></p>';
 						echo '<p><a href="index.php?action=deconnexion" class="button-connexion">Deconnexion</a></p>';
 					}else {
 						echo '<form method="POST" action="index.php?action=connexionAdmin">
-						<p><input type="text" name="username" placeholder="Identifiant"/></p>
-						<p><input type="password" name="password" placeholder="Mot de passe"/></p>
-						<p><input type="submit" value="Connexion"></p>
+						<input type="text" name="username" placeholder="Identifiant" required/>
+						<input type="password" name="password" placeholder="Mot de passe" required/>
+						<input type="submit" class="button-connexion" value="Connexion">
 						</form>';
 					}
 					?>
-					</div>
+				</div>
 					
 			</div>
-			<div id="wrapper">
-					<?= $content ?> 
-					<div id="status">
-						<?php
-							if(isset($_SESSION['userId'])) {
-								echo '<p>Vous êtes connecté</p>';
-							} else {
-								echo '<p>Vous êtes déconnecté</p>';
-							}
-							?>
-					</div>
-			</div>
-			<footer id="piedBlog">
-				Blog réalisé avec PHP, HTML5 et CSS.
+				<?= $content ?> 
+				<div id="status">
+					<?php
+						if(isset($_SESSION['userId'])) {
+							echo '<p>Vous êtes connecté</p>';
+						} else {
+							echo '<p>Vous êtes déconnecté</p>';
+						}
+						?>
+				</div>
+			<footer>
+				Billet Simple pour l'Alaska, écrit par Jean Forteroche.
 			</footer>
 		</div>
 	</body>

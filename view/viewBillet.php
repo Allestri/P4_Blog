@@ -2,19 +2,19 @@
 
 <div id="wrapper-home">
 	<div id="wrapper-post">
-		<article class="billet">
+		<article class="billet box">
 		  <header>
 			<h1 class="titreBillet"><?= $billet['titre'] ?></h1>
-			<time><?= $billet['date_fr'] ?></time>
+			<time>Le <?= $billet['date_fr'] ?></time>
 		  </header>
 		  <p><?= $billet['contenu'] ?></p>
 		</article>
 	</div>
-	<hr class="block-separator">
+	<!-- <hr class="block-separator">-->
 	
 	<div id="wrapper-comment">
 		<header class="box">
-		  <h1 class="commentTitle">Il y a <?= $commentNumber['nbcomments'] ?> commentaires à <?= $billet['titre'] ?></h1>
+		  <h1 class="commentTitle">Il y a <?= $commentNumber['nbcomments'] ?> commentaires pour <?= $billet['titre'] ?></h1>
 		</header>
 
 		<?php foreach ($commentairest as $commentaire): ?>
@@ -39,7 +39,7 @@
 		</div>
 		<?php endforeach; ?>
 		<header class="box">
-			<h2 class="commentTitle">Commentez</h2>
+			<h2 class="commentTitle">Laissez moi un petit message !</h2>
 		</header>
 		<form id="commentform" method="post" action="index.php?action=commenter">
 			<div class="form-bloc">

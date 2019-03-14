@@ -27,7 +27,6 @@ class ControleurBillet {
 	// Ajoute un commentaire
 	public function commenter($auteur, $contenu, $idBillet) {
 		$this->commentaire->ajouterCommentaire($auteur, $contenu, $idBillet);
-		$this->billet($idBillet);
 		header('Location: index.php?action=billet&id=' . $idBillet);
 	}
 	

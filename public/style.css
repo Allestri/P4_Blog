@@ -13,7 +13,6 @@ body {
     min-height: 100%;
     width: 100%;
     margin: auto;
-    text-align: justify;
 	background-color:#e5e5e5;
 }
 
@@ -22,9 +21,23 @@ a, h1
 	color:#2d2d2d;
 }
 
+@font-face
+{
+	font-family:'Signatra';
+	src:url('fonts/Signatra.woff') format('woff'),
+		url('fonts/Signatra.svg') format('svg');
+}
+
+@font-face
+{
+	font-family:'Courgette';
+	src:url('fonts/courgette.woff') format('woff'),
+		url('fonts/courgette.svg') format('svg');
+}
+
 /* 
 ==========================
-Header / Connexion
+Header & Connexion
 ==========================
 */
 
@@ -33,21 +46,59 @@ Header / Connexion
 	height:70px;
 	display:flex;
 	flex-direction:row;
-	justify-content:space-between;
+	justify-content:space-around;
 	background-color:#FFFDFF;
 	margin-bottom:40px;
 	line-height:100%;
 	box-shadow: 0px 3px 4px 0px rgba(193,221,245,0.8);
-
 }
 
+#header a
+{
+	text-decoration:none;
+}
 
-#connexion
+#brand
+{
+	display:flex;
+	flex-direction:row;
+	justify-content:flex-end;
+	align-items:center;
+	height:100%;
+}
+
+#logo
+{
+	width:60px;
+	height:60px;
+	margin-right:20px;
+}
+
+#titreBlog
+{
+	font-size:2em;
+	font-family:Courgette, Arial-Black, serif;
+}
+
+#login
 {
 	width:25%;
 	display:flex;
 	flex-direction:row;
 	justify-content:space-around;
+	align-items:center;
+}
+
+#login input[type=text], input[type=password]
+{
+	height:30px;
+	width:30%;
+	line-height:30px;
+	padding-left:10px;
+	border:0px;
+	border-radius:3px;
+	color:black;
+	background-color:#e5e5e5;
 }
 
 
@@ -56,6 +107,7 @@ Header / Connexion
 	-moz-border-radius:8px;
 	-webkit-border-radius:8px;
 	border-radius:8px;
+	border:0px;
 	display:inline-block;
 	cursor:pointer;
 	color:#fffdff;
@@ -63,7 +115,6 @@ Header / Connexion
 	font-size:15px;
 	font-weight:bold;
 	padding:10px 24px;
-	text-decoration:none;
 }
 .button-connexion:hover {
 	background-color:#666666;
@@ -72,6 +123,13 @@ Header / Connexion
 	position:relative;
 	top:1px;
 }
+
+
+/* 
+==========================
+Containers
+==========================
+*/
 
 
 #superwrapper
@@ -94,7 +152,7 @@ Header / Connexion
 {
 	margin:auto;
 	width:70%;
-	background-color:#FFFDFF;
+	background-color:#f6f6f6;
 	display:flex;
 	flex-direction:column;
 	justify-content:center;
@@ -114,19 +172,22 @@ Header / Connexion
 
 /* 
 ==========================
-Espace Billet & Commentaires
+Posts & Comments
 ==========================
 */
 
-#wrapper-comment
+#wrapper-post
 {
-	background-color:#f6f6f6;
 	padding: 20px 20px 20px;
 }
 
-#wrapper-postwamp
+#wrapper-comment
 {
-	background-color:#f6f6f6;
+	padding: 20px 20px 20px;
+}
+
+#wrapper-create
+{
 	padding: 20px 20px 20px;
 }
 
@@ -178,11 +239,33 @@ Espace Billet & Commentaires
 	box-shadow: 0 1px 3px 0 rgba(0,0,0,.2);
 }
 
+.boxadmin
+{
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,.2);
+	margin-bottom: 0.83em;
+}
+
+.boxsort
+{
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,.2);
+	margin-bottom: 0.83em;
+}
+
 .billet
 {
-	border: 1px solid black;
-	margin-bottom:50px;
+	padding:10px 20px 30px;
 	background-color:#FFFFFF;
+}
+
+.billet h1
+{
+	text-align:center;
+}
+
+.timeinfo
+{
+	padding:10px 0px;
+	text-align:center;
 }
 
 .comment
@@ -215,7 +298,7 @@ Espace Billet & Commentaires
 
 /* 
 ==========================
-Administration & Modération
+Administration & Moderation
 ==========================
 */
 
@@ -227,20 +310,16 @@ Administration & Modération
 	padding: 20px 20px;
 	width:45%;
 	overflow:auto;
-	background-color:#FFFDFF;
-}
-
-#admin h2
-{
-	color:black;
+	background-color:#f6f6f6;
+	box-shadow: -2px 3px 3px 0px rgba(193,221,245,0.8);
 }
 
 #billet-wrapper
 {
+	margin-top:10px;
 	height:85%;
 	display:flex;
 	flex-direction:column;
-	/* background-color:red; */
 }
 
 #moderation
@@ -251,9 +330,16 @@ Administration & Modération
 	box-shadow: 2px 3px 3px 0px rgba(193,221,245,0.8);
 }
 
-#moderation h1
+#moderation h1, #admin h1
 {
 	text-align:center;
+}
+
+.fa-plus-circle
+{
+	font-size:2em;
+	margin:10px;
+	color:#92BCF6;
 }
 
 .fa-exclamation-triangle
@@ -294,6 +380,8 @@ Administration & Modération
 	flex-direction:row;
 	justify-content: space-between;
 	margin-bottom:30px;
+	padding-left:20px;
+	background-color:#FFFFFF;
 	-webkit-box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.62);
 	-moz-box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.62);
 	box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.62);
@@ -330,6 +418,8 @@ Administration & Modération
 	display:flex;
 	justify-content:center;
 	text-decoration:none;
+	padding:20px 0px;
+	background-color:grey;
 }
 
 .button
@@ -341,7 +431,7 @@ Administration & Modération
 	cursor:pointer;
 	color:#000000;
 	font-family:Arial;
-	font-size:15px;
+	font-size: 1em;
 	font-weight:bold;
 	padding:6px 25px;
 	text-decoration:none;
@@ -350,33 +440,32 @@ Administration & Modération
 
 .right
 {
-border-radius:0px 6px 6px 0px;
+	border-radius:0px 6px 6px 0px;
 }
 
 .left
 {
-border-radius:6px 0px 0px 6px;	
+	border-radius:6px 0px 0px 6px;	
 }
 
-.titreBillet {
+.titreBillet 
+{
     margin-bottom : 0px;
+	font-family:Helvetica;
 }
 
 
 /* 
 ==========================
-Forms
+Footer
 ==========================
 */
 
 
-#piedBlog
+footer
 {
 	height:50px;
 	line-height:50px;
+	text-align: center;
 	background-color:#FFFDFF;
-}
-
-#titreBlog, #piedBlog {
-    text-align: center;
 }
