@@ -21,6 +21,20 @@ a, h1
 	color:#2d2d2d;
 }
 
+@font-face
+{
+	font-family:'Signatra';
+	src:url('fonts/Signatra.woff') format('woff'),
+		url('fonts/Signatra.svg') format('svg');
+}
+
+@font-face
+{
+	font-family:'Courgette';
+	src:url('fonts/courgette.woff') format('woff'),
+		url('fonts/courgette.svg') format('svg');
+}
+
 /* 
 ==========================
 Header & Connexion
@@ -60,22 +74,31 @@ Header & Connexion
 	margin-right:20px;
 }
 
-#connexion
+#titreBlog
 {
-	width:30%;
+	font-size:2em;
+	font-family:Courgette, Arial-Black, serif;
+}
+
+#login
+{
+	width:25%;
 	display:flex;
 	flex-direction:row;
 	justify-content:space-around;
 	align-items:center;
 }
 
-#login
+#login input[type=text], input[type=password]
 {
-	width:150px;
-	height:150px;
-	background-color:red;
-	display:flex;
-	flex-direction:row;
+	height:30px;
+	width:30%;
+	line-height:30px;
+	padding-left:10px;
+	border:0px;
+	border-radius:3px;
+	color:black;
+	background-color:#e5e5e5;
 }
 
 
@@ -222,15 +245,27 @@ Posts & Comments
 	margin-bottom: 0.83em;
 }
 
-.boxblue
+.boxsort
 {
-	box-shadow: 0 1px 3px 0 rgba(193,221,245,0.8);
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,.2);
+	margin-bottom: 0.83em;
 }
 
 .billet
 {
-	padding:20px;
+	padding:10px 20px 30px;
 	background-color:#FFFFFF;
+}
+
+.billet h1
+{
+	text-align:center;
+}
+
+.timeinfo
+{
+	padding:10px 0px;
+	text-align:center;
 }
 
 .comment
@@ -345,6 +380,7 @@ Administration & Moderation
 	flex-direction:row;
 	justify-content: space-between;
 	margin-bottom:30px;
+	padding-left:20px;
 	background-color:#FFFFFF;
 	-webkit-box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.62);
 	-moz-box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.62);
@@ -383,6 +419,7 @@ Administration & Moderation
 	justify-content:center;
 	text-decoration:none;
 	padding:20px 0px;
+	background-color:grey;
 }
 
 .button
@@ -414,6 +451,7 @@ Administration & Moderation
 .titreBillet 
 {
     margin-bottom : 0px;
+	font-family:Helvetica;
 }
 
 

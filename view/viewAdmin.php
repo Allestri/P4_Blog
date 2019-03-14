@@ -7,7 +7,7 @@
 			<i class="fas fa-plus-circle"></i>
 			<h2 class="moderationstatus"><a href="index.php?action=create">Creer un nouveau Billet</a></h2>
 		</div>
-		<div class="buttonRow boxadmin">
+		<div class="buttonRow boxsort">
 			<a href="index.php?action=administration&sort=desc" class="button left">Plus Récent</a>
 			<a href="index.php?action=administration&sort=asc" class="button right">Plus Ancien</a>
 		</div>
@@ -37,7 +37,7 @@
 						<h2 class='moderationstatus'>Il y a actuellement " . $signComNbr['nbsigncoms'] . " commentaires à modérer</h2>";
 				} else {
 					echo "<i class='fas fa-check-circle'></i>
-						<h2 class='moderationstatus'>Tout va bien</h2>";
+						<h2 class='moderationstatus'>Tout va bien, il n'y a rien à modérer.</h2>";
 				}
 			?>
 		</div>

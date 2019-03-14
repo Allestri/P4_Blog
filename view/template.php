@@ -15,12 +15,12 @@
 			<div id="header">
 				<div id="brand">
 					<a href="index.php">
-						<img id="logo" src="public/images/logo.png" alt="Logo Blog Alaska" title="by anbileru adaleru from the Noun Project" />
+						<img id="logo" src="public/images/logo2.png" alt="Logo Blog" title="Logo Alaska" />
 					</a>
 					<h1 id="titreBlog"><a href="index.php">Billet simple pour l'Alaska</a></h1>
 				</div>
 					
-				<div id="connexion">
+				<div id="login">
 					<?php
 					if(isset($_SESSION['userId'])){
 						echo '<p><a href="index.php?action=administration&sort=desc" class="button-connexion">Administration</a></p>';
@@ -36,20 +36,18 @@
 				</div>
 					
 			</div>
-			<div id="wrapper">
-					<?= $content ?> 
-					<div id="status">
-						<?php
-							if(isset($_SESSION['userId'])) {
-								echo '<p>Vous êtes connecté</p>';
-							} else {
-								echo '<p>Vous êtes déconnecté</p>';
-							}
-							?>
-					</div>
-			</div>
+				<?= $content ?> 
+				<div id="status">
+					<?php
+						if(isset($_SESSION['userId'])) {
+							echo '<p>Vous êtes connecté</p>';
+						} else {
+							echo '<p>Vous êtes déconnecté</p>';
+						}
+						?>
+				</div>
 			<footer>
-				Blog réalisé avec PHP, HTML5 et CSS.
+				Billet Simple pour l'Alaska, écrit par Jean Forteroche.
 			</footer>
 		</div>
 	</body>
