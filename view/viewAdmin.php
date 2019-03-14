@@ -32,12 +32,15 @@
 		<h1>Modération commentaire</h1>
 		<div class="boxadmin">
 			<?php 
-				if($signComNbr['nbsigncoms'] > 0) {
+				if($signComNbr['nbsigncoms'] > 1) {
 					echo "<i class='fas fa-exclamation-triangle'></i>
-						<h2 class='moderationstatus'>Il y a actuellement " . $signComNbr['nbsigncoms'] . " commentaires à modérer</h2>";
+					<h2 class='moderationstatus'>Il y a actuellement " . $signComNbr['nbsigncoms'] . " commentaires à modérer</h2>";
+				} else if($signComNbr['nbsigncoms'] == 1) {
+					echo "<i class='fas fa-exclamation-triangle orange'></i>
+					<h2 class='moderationstatus'>Il y a actuellement " . $signComNbr['nbsigncoms'] . " seul commentaire à modérer</h2>";
 				} else {
 					echo "<i class='fas fa-check-circle'></i>
-						<h2 class='moderationstatus'>Tout va bien, il n'y a rien à modérer.</h2>";
+					<h2 class='moderationstatus'>Tout va bien, il n'y a rien à modérer.</h2>";
 				}
 			?>
 		</div>
@@ -55,12 +58,14 @@
 				<p>Posté par : <strong><?= $signComs['COM_AUTEUR']?></strong> le <?= $signComs['COM_DATE']?></p>
 			</header>
 			<p><?= $signComs['COM_CONTENU'] ?></p>
-			<form method="post" action="index.php?action=moderer">
-				<input type="hidden" name="cid" value="<?= $signComs['COM_ID'] ?>" />
-				<input type="text" name="modCom" />
-				<button>Modérer commentaire</button>
-			</form>
-			<a href="index.php?action=suppresscom&id=<?= $signComs['COM_ID'] ?>">Supprimer Commentaire</a>
+			<div class="editcom">
+				<form method="post" action="index.php?action=moderer">
+					<input type="hidden" name="cid" value="<?= $signComs['COM_ID'] ?>" />
+					<input type="text" name="modCom" />
+					<button class="button left">Modérer commentaire</button>
+				</form>
+				<a class="button right" href="index.php?action=suppresscom&id=<?= $signComs['COM_ID'] ?>">Supprimer Commentaire</a>
+			</div>
 		</article>
 
 		<?php endforeach; ?>

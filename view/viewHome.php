@@ -3,7 +3,7 @@
 <!-- Template contenus -->
 <div id="wrapper-home">
 	<?php foreach ($billets as $billet): ?>
-	<div id="wrapper-post">
+	<div id="wrapper">
 		<article class="billet box">
 			<header>
 				<a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>">

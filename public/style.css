@@ -156,6 +156,8 @@ Containers
 	display:flex;
 	flex-direction:column;
 	justify-content:center;
+	
+	/* padding: 20px 20px 20px; */
 }
 
 
@@ -176,20 +178,11 @@ Posts & Comments
 ==========================
 */
 
-#wrapper-post
+#wrapper
 {
-	padding: 20px 20px 20px;
+	padding: 20px 20px 10px;
 }
 
-#wrapper-comment
-{
-	padding: 20px 20px 20px;
-}
-
-#wrapper-create
-{
-	padding: 20px 20px 20px;
-}
 
 #commentform
 {
@@ -286,8 +279,41 @@ Posts & Comments
 .signaler
 {
 	position:absolute;
+	height:35px;
 	right:0%;
-	top:0%;
+	bottom:0%;
+}
+
+.signalinfo
+{
+	font-size:0.75em;
+}
+
+.signaler button
+{
+	border:0px;
+	background-color:transparent;
+	cursor:pointer;
+}
+
+
+.fa-exclamation-circle
+{
+	font-size:1.8em;
+	color:#f69494;
+}
+
+.fa-exclamation-circle:hover
+{
+	font-size:1.8em;
+	color:#fd5656;
+}
+
+.signaler button
+{
+	border:0px;
+	background-color:transparent;
+	cursor:pointer;
 }
 
 .block-separator
@@ -309,6 +335,7 @@ Administration & Moderation
 	justify-content: space-between;
 	padding: 20px 20px;
 	width:45%;
+	height:100%;
 	overflow:auto;
 	background-color:#f6f6f6;
 	box-shadow: -2px 3px 3px 0px rgba(193,221,245,0.8);
@@ -324,6 +351,7 @@ Administration & Moderation
 
 #moderation
 {
+	height:100%;
 	width:45%;
 	padding: 20px 20px;
 	background-color:#f6f6f6;
@@ -349,6 +377,11 @@ Administration & Moderation
 	color:#ff3939;
 }
 
+.orange
+{
+	color:#f9a133;
+}
+
 .fa-check-circle
 {
 	font-size:2em;
@@ -368,6 +401,14 @@ Administration & Moderation
 	font-size: 1.5em;
 	display:inline-block;
 }
+
+.editcom
+{
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+}
+
 
 .modCommentaire
 {	

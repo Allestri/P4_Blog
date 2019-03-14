@@ -1,7 +1,7 @@
 <?php $title = "Mon Blog - " . $billet['titre']; ?>
 
 <div id="wrapper-home">
-	<div id="wrapper-post">
+	<div id="wrapper">
 		<article class="billet box">
 		  <header>
 			<h1 class="titreBillet"><?= $billet['titre'] ?></h1>
@@ -12,7 +12,7 @@
 	</div>
 	<!-- <hr class="block-separator">-->
 	
-	<div id="wrapper-comment">
+	<div id="wrapper">
 		<header class="box">
 		  <h1 class="commentTitle">Il y a <?= $commentNumber['nbcomments'] ?> commentaires pour <?= $billet['titre'] ?></h1>
 		</header>
@@ -26,9 +26,9 @@
 				<div class="signaler">
 				<?php
 					if($commentaire['signaler'] == 1){
-						echo "Ce contenu a déjà été signalé";
+						echo "<a href='index.php?action=administration&sort=desc'/><i class='signalinfo'>Ce contenu a déjà été signalé</i></a>";
 					} else {
-						echo '<button class="fas fa-exclamation-circle"></button>';
+						echo '<button class="fas fa-exclamation-circle" title="Signaler le commentaire" ></button>';
 					};
 					?>
 				</div>
