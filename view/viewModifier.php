@@ -1,5 +1,5 @@
 <div id="wrapper-home">
-	<div id="wrapper-create">
+	<div id="wrapper">
 		<h2>Modifier un Billet</h2>
 			<form method="POST" action="<?= "index.php?action=modifier&id=" . $billet['id']?>" id="modifier_form">
 				<input type="text" name="title" value="<?= $billet['titre'] ?>" /><br/>

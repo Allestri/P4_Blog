@@ -37,15 +37,6 @@
 					
 			</div>
 				<?= $content ?> 
-				<div id="status">
-					<?php
-						if(isset($_SESSION['userId'])) {
-							echo '<p>Vous êtes connecté</p>';
-						} else {
-							echo '<p>Vous êtes déconnecté</p>';
-						}
-						?>
-				</div>
 			<footer>
 				Billet Simple pour l'Alaska, écrit par Jean Forteroche.
 			</footer>
@@ -53,6 +44,6 @@
 		<!-- jQuery -->
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
 		<!-- JS -->
-		<script src="../js/main.js"</script>
+		<script src="public/js/main.js"></script>
 	</body>
 </html>

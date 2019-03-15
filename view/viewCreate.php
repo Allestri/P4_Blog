@@ -1,5 +1,5 @@
 <div id="wrapper-home">
-	<div id="wrapper-create">
+	<div id="wrapper">
 		<h2>Créer un Billet</h2>
 		<form method="POST" action="index.php?action=creer" id="creer_form">
 			<input type="text" name="title" placeholder="Titre" /><br/>

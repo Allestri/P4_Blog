@@ -9,10 +9,14 @@ body {
     font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
 }
 
-#container {
+#container 
+{
     min-height: 100%;
     width: 100%;
     margin: auto;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
 	background-color:#e5e5e5;
 }
 
@@ -146,6 +150,7 @@ Containers
 	justify-content:space-between;
 	width:90%;
 	background-color:#e5e5e5;
+	padding-bottom:-60px;
 }
 
 #wrapper-home
@@ -407,6 +412,7 @@ Administration & Moderation
 	display:flex;
 	flex-direction:row;
 	justify-content:center;
+	background-color:grey;
 }
 
 
@@ -505,8 +511,11 @@ Footer
 
 footer
 {
-	height:50px;
-	line-height:50px;
+	height:60px;
+	width:100%;
+	margin-top:40px;
+	line-height:60px;
 	text-align: center;
 	background-color:#FFFDFF;
+	
 }
