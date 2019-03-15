@@ -34,6 +34,13 @@ a, h1
 
 @font-face
 {
+	font-family:'Changa';
+	src:url('fonts/changa.woff') format('woff'),
+		url('fonts/Changa.svg') format('svg');
+}
+
+@font-face
+{
 	font-family:'Courgette';
 	src:url('fonts/courgette.woff') format('woff'),
 		url('fonts/courgette.svg') format('svg');
@@ -348,6 +355,16 @@ Administration & Moderation
 	box-shadow: -2px 3px 3px 0px rgba(193,221,245,0.8);
 }
 
+#moderation h1, #admin h1
+{
+	font-family:Changa, Verdana, sans-serif;
+}
+
+#moderation a, #admin a
+{
+	text-decoration:none;
+}
+
 #billet-wrapper
 {
 	margin-top:10px;
@@ -409,6 +426,17 @@ Administration & Moderation
 	display:inline-block;
 }
 
+.modComInfo
+{
+	line-height:40px;
+	position:relative;
+}
+
+.modComInfo p
+{
+	margin:0px;
+}
+
 .editcom
 {
 	width:100%;
@@ -459,6 +487,27 @@ Administration & Moderation
 	margin:auto;
 }
 
+.fa-times-circle
+{
+	font-size:2em;
+	color:#f69494;
+	text-decoration:none;
+}
+
+.fa-times-circle:hover
+{
+	font-size:2em;
+	color:#fd5656;
+}
+
+
+.crosscom
+{
+	position:absolute;
+	top:10px;
+	left:92%;
+}
+
 .fa-pen-square
 {
 	color:#424242;
@@ -471,8 +520,9 @@ Administration & Moderation
 {
 	display:flex;
 	flex-direction:row;
-	justify-content:center,
+	justify-content:space-between;
 	align-items:center;
+	padding:20px 20px;
 }
 
 .modbutton

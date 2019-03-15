@@ -24,7 +24,7 @@ Class Admin extends Model
 	
 	public function getLogs()
 	{
-		$sql = "SELECT log_id as log_id, com_id as id, DATE_FORMAT(com_date, \'%d/%m/%Y à %Hh%imin%ss\')AS date_fr, com_author AS author, com_content AS content, post_id AS post_id, log_date AS log_date FROM logs ORDER BY log_id DESC";
+		$sql = "SELECT log_id as log_id, com_id as id, com_date AS date_fr, com_author AS author, com_content AS content, post_id AS post_id, log_date AS log_date FROM logs ORDER BY log_id DESC";
 		$logs = $this->executerRequete($sql);
 		return $logs->fetchAll();
 	}
@@ -54,6 +54,18 @@ Class Admin extends Model
 	public function insertLogs($idCommentaire){
 		$sql ="INSERT INTO logs(com_id, com_date, com_author, com_content, post_id) 
 				SELECT com_id, com_date, com_auteur, com_contenu, bil_id FROM t_commentaire WHERE com_id = ?";
+		$this->executerRequete($sql, array($idCommentaire));
+	}
+	
+	// Insertion type Supprimé log Modération
+	public function insertLogsSupp($idCommentaire){
+		$sql ="UPDATE logs SET type = 'deleted' WHERE com_id = ?";
+		$this->executerRequete($sql, array($idCommentaire));
+	}
+	
+	// Insertion type Modifié log Modération
+	public function insertLogsMod($idCommentaire){
+		$sql ="UPDATE logs SET type = 'deleted' WHERE com_id = ?";
 		$this->executerRequete($sql, array($idCommentaire));
 	}
 	

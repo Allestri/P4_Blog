@@ -49,23 +49,27 @@
 			<h2 class="moderationstatus"><a href='index.php?action=logs'>Accéder à l'historique de modération</a></h2>
 		</div>
 		<?php
-		foreach ($commentaires as $signComs): ?>
+		$nb = 0;
+		foreach ($commentaires as $signComs): 
+		$nb ++;
+		?>
 		
 		<article class="comment box">
 			<header>
 			<!-- Titre du commentaire !-->
-				<p>Commentaire ID : <?= $signComs['COM_ID'] ?> </p>
-				<p>Posté par : <strong><?= $signComs['COM_AUTEUR']?></strong> le <?= $signComs['COM_DATE']?></p>
+				<div class="modComInfo">
+					<p>Commentaire ID : <?= $signComs['COM_ID'] ?> </p>
+					<p>Posté par : <strong><?= $signComs['COM_AUTEUR']?></strong> le <?= $signComs['COM_DATE']?></p>
+					<a class="fas fa-times-circle crosscom" title="Supprimer Commentaire" href="index.php?action=suppresscom&id=<?= $signComs['COM_ID'] ?>"></a>
+				</div>
 			</header>
-			<p><?= $signComs['COM_CONTENU'] ?></p>
-			<!-- <button class="buttonDisplay">Modérer</button> !-->
+
 			<div class="editcom">
 				<form method="post" class="editform" action="index.php?action=moderer">
 					<input type="hidden" name="cid" value="<?= $signComs['COM_ID'] ?>" />
-					<textarea cols="40" rows="5" name="modCom" placeholder="Editer Commentaire"/></textarea>
+					<textarea cols="40" rows="5" name="modCom" placeholder="Editer Commentaire" required/><?= $signComs['COM_CONTENU']?></textarea>
 					<button class="button modbutton">Modérer commentaire</button>
 				</form>
-				<a class="fas fa-trash" title="Supprimer Commentaire" href="index.php?action=suppresscom&id=<?= $signComs['COM_ID'] ?>"></a>
 			</div>
 		</article>
 

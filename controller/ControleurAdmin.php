@@ -116,6 +116,7 @@ class ControleurAdmin {
 	// Moderer commentaire
 	public function moderateCom($contenus, $idCommentaire){
 		$this->administration->insertLogs($idCommentaire);
+		$this->administration->insertLogsMod($idCommentaire);
 		$this->administration->modSignCom($contenus, $idCommentaire);
 		header('Location: index.php?action=administration&sort=desc');
 	}
@@ -123,6 +124,7 @@ class ControleurAdmin {
 	// Suppression commentaire
 	public function suppressCom($idCommentaire){
 		$this->administration->insertLogs($idCommentaire);
+		$this->administration->insertLogsSupp($idCommentaire);
 		$this->administration->suppressCom($idCommentaire);
 		header('Location: index.php?action=administration&sort=desc');
 	}

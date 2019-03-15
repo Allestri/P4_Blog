@@ -1,33 +1,34 @@
 function init(){
 	alert();
-	// displayModeration();
+	displayModeration();
 }
 
 
 function alert() {
 	var buttonElts = document.getElementsByClassName("fa-trash");
 	for( var i =0; i < buttonElts.length; i++) {
-		buttonElts[i].addEventListener("click", function() {
+		buttonElts[i].addEventListener("click", function(e) {
 			if(confirm("Voulez vous supprimer cet element ?")){
-				window.location.href = "index.php";
 				console.log("Billet Supprimé");
+			} else {
+				e.preventDefault();
 			}
 		});
 	}
 }
 
-/* function displayModeration() {
+function displayModeration() {
 	var editDiv = document.getElementsByClassName("editcom");
 	var buttonElts = document.getElementsByClassName("buttonDisplay");
 	
 	for(var i = 0; i < buttonElts.length; i++){
 		console.log(editDiv[i]);
 		buttonElts[i].addEventListener("click",function() {
-			console.log(buttonElts);
+			console.log(i);
 		});
 	}
 }
-*/
+
 
 
 
