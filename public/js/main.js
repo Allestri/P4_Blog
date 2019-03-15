@@ -8,7 +8,7 @@ function alert() {
 	var buttonElts = document.getElementsByClassName("fa-trash");
 	for( var i =0; i < buttonElts.length; i++) {
 		buttonElts[i].addEventListener("click", function() {
-			if(confirm("Voulez vous supprimer ce billet ?")){
+			if(confirm("Voulez vous supprimer cet element ?")){
 				window.location.href = "index.php";
 				console.log("Billet Supprimé");
 			}

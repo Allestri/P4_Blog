@@ -58,14 +58,14 @@
 				<p>Posté par : <strong><?= $signComs['COM_AUTEUR']?></strong> le <?= $signComs['COM_DATE']?></p>
 			</header>
 			<p><?= $signComs['COM_CONTENU'] ?></p>
-			<button class="buttonDisplay">Modérer</button>
+			<!-- <button class="buttonDisplay">Modérer</button> !-->
 			<div class="editcom">
-				<form method="post" action="index.php?action=moderer">
+				<form method="post" class="editform" action="index.php?action=moderer">
 					<input type="hidden" name="cid" value="<?= $signComs['COM_ID'] ?>" />
-					<textarea name="modCom" /></textarea>
-					<button class="button left">Modérer commentaire</button>
+					<textarea cols="40" rows="5" name="modCom" placeholder="Editer Commentaire"/></textarea>
+					<button class="button modbutton">Modérer commentaire</button>
 				</form>
-				<a class="button right" href="index.php?action=suppresscom&id=<?= $signComs['COM_ID'] ?>">Supprimer Commentaire</a>
+				<a class="fas fa-trash" title="Supprimer Commentaire" href="index.php?action=suppresscom&id=<?= $signComs['COM_ID'] ?>"></a>
 			</div>
 		</article>
 
