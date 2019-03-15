@@ -24,7 +24,7 @@ Class Admin extends Model
 	
 	public function getLogs()
 	{
-		$sql = "SELECT log_id as log_id, com_id as id, com_date AS date_fr, author AS author, content AS content, post_id AS post_id, log_date AS log_date FROM logs ORDER BY log_id DESC";
+		$sql = "SELECT log_id as log_id, com_id as id, DATE_FORMAT(com_date, \'%d/%m/%Y à %Hh%imin%ss\')AS date_fr, com_author AS author, com_content AS content, post_id AS post_id, log_date AS log_date FROM logs ORDER BY log_id DESC";
 		$logs = $this->executerRequete($sql);
 		return $logs->fetchAll();
 	}
@@ -52,8 +52,8 @@ Class Admin extends Model
 	
 	// Insertion logs moderation
 	public function insertLogs($idCommentaire){
-		$sql ="INSERT INTO logs(com_id, com_date, author, content, post_id, signale, modere) 
-				SELECT com_id, com_date, com_auteur, com_contenu, bil_id, com_signaler, com_modere FROM t_commentaire WHERE com_id = ?";
+		$sql ="INSERT INTO logs(com_id, com_date, com_author, com_content, post_id) 
+				SELECT com_id, com_date, com_auteur, com_contenu, bil_id FROM t_commentaire WHERE com_id = ?";
 		$this->executerRequete($sql, array($idCommentaire));
 	}
 	

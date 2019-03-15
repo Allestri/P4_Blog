@@ -418,6 +418,11 @@ Administration & Moderation
 	align-items:center;
 }
 
+.editstatus
+{
+	text-align:center;
+}
+
 
 .modCommentaire
 {	
@@ -482,7 +487,7 @@ Administration & Moderation
 	justify-content:center;
 	text-decoration:none;
 	padding:20px 0px;
-	background-color:grey;
+	/* background-color:grey; */
 }
 
 .button
