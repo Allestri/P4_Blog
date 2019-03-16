@@ -25,11 +25,17 @@ a, h1
 	color:#2d2d2d;
 }
 
+/* 
+==========================
+Fonts
+==========================
+*/
+
 @font-face
 {
-	font-family:'Signatra';
-	src:url('fonts/Signatra.woff') format('woff'),
-		url('fonts/Signatra.svg') format('svg');
+	font-family:'Birds';
+	src:url('fonts/Birds.ttf') format('truetype'),
+		url('fonts/Birds.svg') format('svg');
 }
 
 @font-face
@@ -190,7 +196,12 @@ Posts & Comments
 ==========================
 */
 
-#wrapper
+.wrapper
+{
+	padding: 20px 20px 10px;
+}
+
+.wrapperlogs
 {
 	padding: 20px 20px 10px;
 }
@@ -355,7 +366,7 @@ Administration & Moderation
 	box-shadow: -2px 3px 3px 0px rgba(193,221,245,0.8);
 }
 
-#moderation h1, #admin h1
+#moderation h1, #admin h1, .wrapperlogs h1
 {
 	font-family:Changa, Verdana, sans-serif;
 }
@@ -382,65 +393,11 @@ Administration & Moderation
 	box-shadow: 2px 3px 3px 0px rgba(193,221,245,0.8);
 }
 
-#moderation h1, #admin h1
+#moderation h1, #admin h1, .wrapperlogs h1
 {
 	text-align:center;
 }
 
-
-
-.fa-sort-alpha-down
-{
-	font-size:2em;
-	color:#92BCF6;
-}
-
-
-.fa-sort-up
-{
-	font-size:2em;
-	color:#92BCF6;
-}
-
-.fa-comments
-{
-	font-size:2em;
-	color:#92BCF6;
-	margin:auto;
-}
-
-.fa-plus-circle
-{
-	font-size:2em;
-	margin:10px;
-	color:#92BCF6;
-}
-
-.fa-exclamation-triangle
-{
-	font-size:2em;
-	margin:10px;
-	color:#ff3939;
-}
-
-.orange
-{
-	color:#f9a133;
-}
-
-.fa-check-circle
-{
-	font-size:2em;
-	margin:10px;
-	color:#36e14a;
-}
-
-.fa-history
-{
-	font-size:2em;
-	margin:10px;
-	color:#92BCF6;
-}
 
 .moderationstatus
 {
@@ -500,42 +457,6 @@ Administration & Moderation
 	flex-direction:row;
 	justify-content:space-around;
 	/* background-color:blue; */
-}
-
-.fa-trash
-{
-	color:#424242;
-	font-size:1.5em;
-	margin:auto;
-}
-
-.fa-times-circle
-{
-	font-size:2em;
-	color:#f0baba;
-	text-decoration:none;
-}
-
-.fa-times-circle:hover
-{
-	font-size:2em;
-	color:#fd5656;
-}
-
-
-.crosscom
-{
-	position:absolute;
-	top:10px;
-	left:92%;
-}
-
-.fa-pen-square
-{
-	color:#424242;
-	font-size:1.5em;
-	margin:auto;
-	text-decoration:none;
 }
 
 .editform
@@ -606,10 +527,108 @@ Administration & Moderation
 	border-radius:6px 0px 0px 6px;	
 }
 
-.titreBillet 
+.postTitle
 {
+	font-size:1.8em;
     margin-bottom : 0px;
-	font-family:Helvetica;
+	font-family:Courgette;
+}
+
+
+/* 
+==========================
+Logos, Icons
+==========================
+*/
+
+
+.fa-sort-alpha-down
+{
+	font-size:2em;
+	color:#92BCF6;
+}
+
+
+.fa-sort-up
+{
+	font-size:2em;
+	color:#92BCF6;
+}
+
+.fa-comments
+{
+	font-size:2em;
+	color:#92BCF6;
+	margin:auto;
+}
+
+.fa-plus-circle
+{
+	font-size:2em;
+	margin:10px;
+	color:#92BCF6;
+}
+
+.fa-exclamation-triangle
+{
+	font-size:2em;
+	margin:10px;
+	color:#ff3939;
+}
+
+.orange
+{
+	color:#f9a133;
+}
+
+.fa-check-circle
+{
+	font-size:2em;
+	margin:10px;
+	color:#36e14a;
+}
+
+.fa-history
+{
+	font-size:2em;
+	margin:10px;
+	color:#92BCF6;
+}
+
+
+.fa-trash
+{
+	color:#424242;
+	font-size:1.5em;
+	margin:auto;
+}
+
+.fa-times-circle
+{
+	font-size:2em;
+	color:#f0baba;
+	text-decoration:none;
+}
+
+.fa-times-circle:hover
+{
+	font-size:2em;
+	color:#fd5656;
+}
+
+.fa-pen-square
+{
+	color:#424242;
+	font-size:1.5em;
+	margin:auto;
+	text-decoration:none;
+}
+
+.crosscom
+{
+	position:absolute;
+	top:10px;
+	left:92%;
 }
 
 

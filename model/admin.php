@@ -24,7 +24,8 @@ Class Admin extends Model
 	
 	public function getLogs()
 	{
-		$sql = "SELECT log_id as log_id, com_id as id, com_date AS date_fr, com_author AS author, com_content AS content, post_id AS post_id, log_date AS log_date FROM logs ORDER BY log_id DESC";
+		$sql = 'SELECT log_id as log_id, com_id as id, DATE_FORMAT(com_date, \'%d/%m/%Y à %Hh%imin%ss\') 
+		AS date_fr, com_author AS author, com_content AS content, post_id AS post_id, mod_type as mod_type, DATE_FORMAT(log_date, \'%d/%m/%Y à %Hh%imin%ss\') AS log_date_fr FROM logs ORDER BY log_id DESC';
 		$logs = $this->executerRequete($sql);
 		return $logs->fetchAll();
 	}
@@ -40,7 +41,7 @@ Class Admin extends Model
 	// Modérer commentaire signalés
 	public function modSignCom($contenus, $idCommentaire)
 	{
-		$sql = 'UPDATE comments SET COM_MODERE = 1, COM_CONTENU = ? WHERE COM_ID = ?';
+		$sql = 'UPDATE comments SET COM_SIGNALER = 0, COM_MODERE = 1, COM_CONTENU = ? WHERE COM_ID = ?';
 		$this->executerRequete($sql, array($contenus, $idCommentaire));
 	}
 
@@ -59,13 +60,13 @@ Class Admin extends Model
 	
 	// Insertion type Supprimé log Modération
 	public function insertLogsSupp($idCommentaire){
-		$sql ="UPDATE logs SET type = 'deleted' WHERE com_id = ?";
+		$sql ="UPDATE logs SET mod_type = 'deleted' WHERE com_id = ?";
 		$this->executerRequete($sql, array($idCommentaire));
 	}
 	
 	// Insertion type Modifié log Modération
 	public function insertLogsMod($idCommentaire){
-		$sql ="UPDATE logs SET type = 'modified' WHERE com_id = ?";
+		$sql ="UPDATE logs SET mod_type = 'modified' WHERE com_id = ?";
 		$this->executerRequete($sql, array($idCommentaire));
 	}
 	
