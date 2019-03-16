@@ -387,6 +387,28 @@ Administration & Moderation
 	text-align:center;
 }
 
+
+
+.fa-sort-alpha-down
+{
+	font-size:2em;
+	color:#92BCF6;
+}
+
+
+.fa-sort-up
+{
+	font-size:2em;
+	color:#92BCF6;
+}
+
+.fa-comments
+{
+	font-size:2em;
+	color:#92BCF6;
+	margin:auto;
+}
+
 .fa-plus-circle
 {
 	font-size:2em;
@@ -490,7 +512,7 @@ Administration & Moderation
 .fa-times-circle
 {
 	font-size:2em;
-	color:#f69494;
+	color:#f0baba;
 	text-decoration:none;
 }
 
@@ -525,6 +547,15 @@ Administration & Moderation
 	padding:20px 20px;
 }
 
+.editform textarea
+{
+	padding:5px;
+	-webkit-box-shadow: inset 2px 2px 5px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: inset 2px 2px 5px 0px rgba(0,0,0,0.5);
+	box-shadow: inset 2px 2px 5px 0px rgba(0,0,0,0.5);
+}
+
+
 .modbutton
 {
 	margin:25px 20px;
@@ -534,10 +565,19 @@ Administration & Moderation
 .buttonRow
 {
 	display:flex;
-	justify-content:center;
+	justify-content:space-around;
+	position:relative;
 	text-decoration:none;
 	padding:20px 0px;
-	/* background-color:grey; */
+}
+
+.buttonRow hr
+{
+	position:absolute;
+	left:50%;
+	top:0px;
+	margin:0px;
+	height:100%;
 }
 
 .button

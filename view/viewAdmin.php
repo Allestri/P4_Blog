@@ -8,8 +8,11 @@
 			<h2 class="moderationstatus"><a href="index.php?action=create">Creer un nouveau Billet</a></h2>
 		</div>
 		<div class="buttonRow boxsort">
-			<a href="index.php?action=administration&sort=desc" class="button left">Plus Récent</a>
-			<a href="index.php?action=administration&sort=asc" class="button right">Plus Ancien</a>
+
+			<a href="index.php?action=administration&sort=desc" class="button">Plus Récent</a>
+			<hr>
+			<a href="index.php?action=administration&sort=asc" class="button">Plus Ancien</a>
+
 		</div>
 		
 		<div id="billet-wrapper">
@@ -19,6 +22,7 @@
 				<a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>">
 					<h3><?= $billet['titre'] ?></h3>
 				</a>
+				<i class="fas fa-comments"></i>
 				<div class="buttonAdmin">
 					<a href="<?= "index.php?action=vueModifier&id=" . $billet['id'] ?>" title="Modifier Billet" class="fas fa-pen-square"></a>
 					<a href="<?= "index.php?action=supprimer&id=" . $billet['id'] ?>" title="Supprimer Billet" class="fas fa-trash"></a>

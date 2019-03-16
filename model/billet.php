@@ -8,7 +8,7 @@ class Billet extends Model
 	public function getBillets()
 	{
 		$sql = 'select BIL_ID as id, DATE_FORMAT(BIL_DATE, \'%d/%m/%Y à %Hh%imin%ss\') 
-		AS date_fr, BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET order by BIL_ID desc';
+		AS date_fr, BIL_TITRE as titre, BIL_CONTENU as contenu from posts order by BIL_ID desc';
 		$billets = $this->executerRequete($sql);
 		return $billets->fetchAll();
 	}
@@ -16,7 +16,7 @@ class Billet extends Model
 	public function getBilletsAsc()
 	{
 		$sql = 'select BIL_ID as id, DATE_FORMAT(BIL_DATE, \'%d/%m/%Y à %Hh%imin%ss\') 
-		AS date_fr, BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET order by BIL_ID asc';
+		AS date_fr, BIL_TITRE as titre, BIL_CONTENU as contenu from posts order by BIL_ID asc';
 		$billets = $this->executerRequete($sql);
 		return $billets->fetchAll();
 	}
@@ -24,7 +24,7 @@ class Billet extends Model
 	// Renvoie les infos sur un billet
 	public function getBillet($idBillet)
 	{
-		$sql = 'select BIL_ID as id, DATE_FORMAT(BIL_DATE, \'%d/%m/%Y à %H:%i:%s\') as date_fr, BIL_TITRE as titre, BIL_CONTENU as contenu from T_BILLET where BIL_ID=?';
+		$sql = 'select BIL_ID as id, DATE_FORMAT(BIL_DATE, \'%d/%m/%Y à %H:%i:%s\') as date_fr, BIL_TITRE as titre, BIL_CONTENU as contenu FROM posts where BIL_ID=?';
 		$billet = $this->executerRequete($sql, array($idBillet));
 		
 		if($billet->rowCount() == 1) {

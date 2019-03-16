@@ -17,7 +17,7 @@ Class Admin extends Model
 	// Liste commentaires signalés
 	public function getSignCom()
 	{
-		$sql = "SELECT * FROM `t_commentaire` WHERE COM_SIGNALER = 1 AND COM_MODERE = 0";
+		$sql = "SELECT * FROM `comments` WHERE COM_SIGNALER = 1 AND COM_MODERE = 0";
 		$signCom = $this->executerRequete($sql);
 		return $signCom;
 	}
@@ -32,7 +32,7 @@ Class Admin extends Model
 	// Nombre commentaire à moderer
 	public function countSignCom()
 	{
-		$sql = "select count(*) as nbsigncoms from T_COMMENTAIRE where COM_SIGNALER = 1 AND COM_MODERE = 0";
+		$sql = "select count(*) as nbsigncoms from comments where COM_SIGNALER = 1 AND COM_MODERE = 0";
 		$commentSignNumber = $this->executerRequete($sql);
 	return $commentSignNumber->fetch();
 	}
@@ -40,20 +40,20 @@ Class Admin extends Model
 	// Modérer commentaire signalés
 	public function modSignCom($contenus, $idCommentaire)
 	{
-		$sql = 'UPDATE t_commentaire SET COM_MODERE = 1, COM_CONTENU = ? WHERE COM_ID = ?';
+		$sql = 'UPDATE comments SET COM_MODERE = 1, COM_CONTENU = ? WHERE COM_ID = ?';
 		$this->executerRequete($sql, array($contenus, $idCommentaire));
 	}
 
 	// Supprimer commentaire signalé 
 	public function suppressCom($idCommentaire){
-		$sql = "DELETE FROM t_commentaire WHERE COM_ID = ?";
+		$sql = "DELETE FROM comments WHERE COM_ID = ?";
 		$this->executerRequete($sql, array($idCommentaire));
 	}
 	
 	// Insertion logs moderation
 	public function insertLogs($idCommentaire){
 		$sql ="INSERT INTO logs(com_id, com_date, com_author, com_content, post_id) 
-				SELECT com_id, com_date, com_auteur, com_contenu, bil_id FROM t_commentaire WHERE com_id = ?";
+				SELECT com_id, com_date, com_auteur, com_contenu, bil_id FROM comments WHERE com_id = ?";
 		$this->executerRequete($sql, array($idCommentaire));
 	}
 	
@@ -65,28 +65,28 @@ Class Admin extends Model
 	
 	// Insertion type Modifié log Modération
 	public function insertLogsMod($idCommentaire){
-		$sql ="UPDATE logs SET type = 'deleted' WHERE com_id = ?";
+		$sql ="UPDATE logs SET type = 'modified' WHERE com_id = ?";
 		$this->executerRequete($sql, array($idCommentaire));
 	}
 	
 	// Creation Billet
 	public function create($titre, $content)
 	{
-		$sql = "INSERT INTO t_billet(BIL_DATE, BIL_TITRE, BIL_CONTENU) VALUES(NOW(), ?, ?)";
+		$sql = "INSERT INTO posts(BIL_DATE, BIL_TITRE, BIL_CONTENU) VALUES(NOW(), ?, ?)";
 		$this->executerRequete($sql, array($titre, $content));
 	}
 	
 	// Suppression Billet
 	public function suppress($idBillet)
 	{
-		$sql = 'DELETE FROM t_billet WHERE bil_id = ?';
+		$sql = 'DELETE FROM posts WHERE bil_id = ?';
 		$this->executerRequete($sql, array($idBillet));
 	}
 	
 	// Modification Billet
 	public function update($idBillet, $titreBillet, $contenuBillet)
 	{
-		$sql = "UPDATE t_billet SET bil_titre = ?, bil_contenu = ? WHERE bil_id = ?";
+		$sql = "UPDATE posts SET bil_titre = ?, bil_contenu = ? WHERE bil_id = ?";
 		$this->executerRequete($sql, array($titreBillet, $contenuBillet, $idBillet));
 	}
 
