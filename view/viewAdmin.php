@@ -4,7 +4,7 @@
 	
 		<h1>Administration</h1>
 		<div class="boxadmin">
-			<i class="fas fa-plus-circle"></i>
+			<i class="fas fa-plus-circle adminicon"></i>
 			<h2 class="moderationstatus"><a href="index.php?action=create">Creer un nouveau Billet</a></h2>
 		</div>
 		<div class="buttonRow boxsort">
@@ -37,19 +37,19 @@
 		<div class="boxadmin">
 			<?php 
 				if($signComNbr['nbsigncoms'] > 1) {
-					echo "<i class='fas fa-exclamation-triangle'></i>
+					echo "<i class='fas fa-exclamation-triangle adminicon'></i>
 					<h2 class='moderationstatus'>Il y a actuellement " . $signComNbr['nbsigncoms'] . " commentaires à modérer</h2>";
 				} else if($signComNbr['nbsigncoms'] == 1) {
-					echo "<i class='fas fa-exclamation-triangle orange'></i>
+					echo "<i class='fas fa-exclamation-triangle orange adminicon'></i>
 					<h2 class='moderationstatus'>Il y a actuellement " . $signComNbr['nbsigncoms'] . " seul commentaire à modérer</h2>";
 				} else {
-					echo "<i class='fas fa-check-circle'></i>
-					<h2 class='moderationstatus'>Tout va bien, il n'y a rien à modérer.</h2>";
+					echo "<i class='fas fa-check-circle adminicon'></i>
+					<h2 class='moderationstatus'>Tout va bien, il n'y a rien à modérer</h2>";
 				}
 			?>
 		</div>
 		<div class="boxadmin">
-			<i class='fas fa-history'></i>
+			<i class='fas fa-history adminicon'></i>
 			<h2 class="moderationstatus"><a href='index.php?action=logs'>Accéder à l'historique de modération</a></h2>
 		</div>
 		<?php

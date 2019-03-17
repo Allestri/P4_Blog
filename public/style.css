@@ -91,7 +91,7 @@ Header & Connexion
 	margin-right:20px;
 }
 
-#titreBlog
+#blogTitle
 {
 	font-size:2em;
 	font-family:Courgette, Arial-Black, serif;
@@ -99,7 +99,7 @@ Header & Connexion
 
 #login
 {
-	width:25%;
+	width:380px;
 	display:flex;
 	flex-direction:row;
 	justify-content:space-around;
@@ -129,9 +129,9 @@ Header & Connexion
 	cursor:pointer;
 	color:#fffdff;
 	font-family:Arial;
-	font-size:15px;
+	font-size:14px;
 	font-weight:bold;
-	padding:10px 24px;
+	padding:10px 20px;
 }
 .button-connexion:hover {
 	background-color:#666666;
@@ -139,6 +139,12 @@ Header & Connexion
 .button-connexion:active {
 	position:relative;
 	top:1px;
+}
+
+#loginlogo
+{
+	padding:10px 15px;
+	display:none;
 }
 
 
@@ -198,7 +204,7 @@ Posts & Comments
 
 .wrapper
 {
-	padding: 20px 20px 10px;
+	padding: 20px 20px 20px;
 }
 
 .wrapperlogs
@@ -360,6 +366,7 @@ Administration & Moderation
 	justify-content: space-between;
 	padding: 20px 20px;
 	width:45%;
+	max-width:900px;
 	height:100%;
 	overflow:auto;
 	background-color:#f6f6f6;
@@ -388,6 +395,7 @@ Administration & Moderation
 {
 	height:100%;
 	width:45%;
+	max-width:900px;
 	padding: 20px 20px;
 	background-color:#f6f6f6;
 	box-shadow: 2px 3px 3px 0px rgba(193,221,245,0.8);
@@ -541,6 +549,11 @@ Logos, Icons
 ==========================
 */
 
+.fa-sign-in-alt
+{
+	font-size:1.2em;
+}
+
 
 .fa-sort-alpha-down
 {
@@ -649,3 +662,184 @@ footer
 	background-color:#FFFDFF;
 	
 }
+
+
+/* 
+==========================
+Media Queries 
+==========================
+*/
+
+/* Small desktop displays */
+@media screen and (max-width: 1300px)
+{
+
+#login
+{
+	width:275px;
+}
+
+#logintext
+{
+	display:none;
+}
+
+#loginlogo
+{
+	display:inline-block;
+}
+
+
+#wrapper-admin
+{
+	width:100%;
+}
+
+.moderationstatus
+{
+	font-size:1.3em;
+}
+
+.adminicon
+{
+	font-size:1.5em;
+}
+
+
+}
+
+@media screen and (max-width: 992px)
+{
+
+#wrapper-admin
+{
+	display:flex;
+	flex-direction:column;
+}
+
+#admin
+{
+	margin:auto;
+	width:60%;
+}
+
+#moderation
+{
+	margin:auto;
+	width:60%;
+}
+	
+	
+}
+
+
+/* Tablets / Large phones */
+@media screen and (max-width: 768px)
+{
+
+#container
+{
+	background-color:#F6F6F6;
+}
+
+#admin
+{
+	width:80%;
+	padding-top:0px;
+}
+
+#moderation
+{
+	width:80%;
+	padding-top:0px;
+}
+
+
+#wrapper-home
+{
+	width:100%;
+}
+
+#header
+{
+	height: 50px;
+	margin-bottom:10px;
+}
+
+#logo
+{
+	height:40px;
+	width:40px;
+	margin-right:10px;
+}
+
+#blogTitle
+{
+	font-size:1.5em;
+}
+
+#login
+{
+	width:120px;
+	justify-content:space-around;	
+}
+
+
+}
+
+
+/* Small devices */
+@media screen and (max-width: 600px)
+{
+	
+h3
+{
+	font-size:0.8em;
+}
+
+#header
+{
+	height: 40px;
+	margin-bottom:10px;
+}
+
+.button-connexion
+{
+	font-size:12px;
+	padding:5px 7px;
+}
+
+
+#admin
+{
+	width:100%;
+	padding:0px;
+}
+
+#moderation
+{
+	width:100%;
+	padding:0px;
+}
+
+.moderationstatus
+{
+	font-size:1em;
+}
+
+#logo
+{
+	height:35px;
+	width:35px;
+	margin-right:10px;
+}
+
+#blogTitle
+{
+	font-size:1.2em;
+}
+	
+
+}
+
+

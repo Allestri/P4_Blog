@@ -2,6 +2,7 @@
 <html lang="fr">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="public/style.css" />
 		<title><?php $title ?></title>
 		<!-- Font Awesome CDN -->
@@ -17,19 +18,22 @@
 					<a href="index.php">
 						<img id="logo" src="public/images/logo2.png" alt="Logo Blog" title="Logo Alaska" />
 					</a>
-					<h1 id="titreBlog"><a href="index.php">Billet simple pour l'Alaska</a></h1>
+					<h1 id="blogTitle"><a href="index.php">Billet simple pour l'Alaska</a></h1>
 				</div>
 					
 				<div id="login">
 					<?php
 					if(isset($_SESSION['userId'])){
-						echo '<p><a href="index.php?action=administration&sort=desc" class="button-connexion">Administration</a></p>';
-						echo '<p><a href="index.php?action=deconnexion" class="button-connexion">Deconnexion</a></p>';
+						echo '<p><a href="index.php?action=administration&sort=desc" class="button-connexion" id="logintext">Administration</a></p>
+							<a href="index.php?action=administration&sort=desc" class="fas fa-tasks button-connexion" id="loginlogo"></a>
+							<p><a href="index.php?action=deconnexion" class="button-connexion" id="logintext">Deconnexion</a></p>
+							<a href="index.php?action=deconnexion" class="fas fa-sign-out-alt button-connexion" id="loginlogo"></a>';
 					}else {
 						echo '<form method="POST" action="index.php?action=connexionAdmin">
 						<input type="text" name="username" placeholder="Identifiant" required/>
 						<input type="password" name="password" placeholder="Mot de passe" required/>
-						<input type="submit" class="button-connexion" value="Connexion">
+						<input type="submit" class="button-connexion" id="logintext" value="Connexion">
+						<button class="button-connexion" id="loginlogo"><i class="fas fa-sign-in-alt"></i></button>
 						</form>';
 					}
 					?>
