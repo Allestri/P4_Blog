@@ -94,7 +94,7 @@ Header & Connexion
 {
 	display:flex;
 	flex-direction:row;
-	justify-content:flex-end;
+	justify-content:flex-start;
 	align-items:center;
 	height:100%;
 }
@@ -836,9 +836,27 @@ Media Queries
 
 #login
 {
-	width:120px;
-	justify-content:space-around;	
+	width:50%;
+	justify-content:space-between;	
 }
+
+#loginlogo
+{
+	padding:7px;
+}
+
+#login input[type=text], input[type=password]
+{
+	height:20px;
+	width:80px;
+	line-height:20px;
+	padding-left:0px;
+	border:0px;
+	border-radius:3px;
+	color:black;
+	background-color:#e5e5e5;
+}
+
 
 
 }
@@ -857,6 +875,7 @@ h3
 {
 	height: 40px;
 	margin-bottom:10px;
+	justify-content:space-between;
 }
 
 .button-connexion
@@ -910,7 +929,7 @@ h3
 
 #blogTitle
 {
-	font-size:1.2em;
+	font-size:1em;
 }
 	
 
