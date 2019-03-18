@@ -352,6 +352,20 @@ Posts & Comments
 	background-color:#98B1F4;
 }
 
+/* Logs */
+
+.logs
+{
+	
+}
+
+.newcomment
+{
+	width:100%;
+	height:200px;
+	border-top: 1px dashed black;
+}
+
 
 /* 
 ==========================

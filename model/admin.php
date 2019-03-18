@@ -22,10 +22,29 @@ Class Admin extends Model
 		return $signCom;
 	}
 	
+	// Liste commentaires moderés
+	public function getModCom()
+	{
+		$sql = "SELECT * FROM `comments` WHERE COM_SIGNALER = 0 AND COM_MODERE = 1";
+		$modCom = $this->executerRequete($sql);
+		return $modCom->fetchAll();
+	}
+	
+	// (deprecated) Liste historique moderation 
 	public function getLogs()
 	{
 		$sql = 'SELECT log_id as log_id, com_id as id, DATE_FORMAT(com_date, \'%d/%m/%Y à %Hh%imin%ss\') 
 		AS date_fr, com_author AS author, com_content AS content, post_id AS post_id, mod_type as mod_type, DATE_FORMAT(log_date, \'%d/%m/%Y à %Hh%imin%ss\') AS log_date_fr FROM logs ORDER BY log_id DESC';
+		$logs = $this->executerRequete($sql);
+		return $logs->fetchAll();
+	}
+	
+	// Liste historique moderation
+	public function getLogsBetter()
+	{
+		$sql = 'SELECT logs.log_id as log_id, logs.com_date as post_date_fr, comments.com_id as com_id, comments.COM_AUTEUR as author, logs.com_content as oldcontent, 
+		comments.com_contenu as newcontent, logs.log_date as mod_date_fr, logs.mod_type as mod_type, comments.bil_id as post_id 
+		FROM logs INNER JOIN comments ON logs.com_id = comments.com_id ORDER BY log_id DESC';
 		$logs = $this->executerRequete($sql);
 		return $logs->fetchAll();
 	}
