@@ -45,7 +45,7 @@ Class Admin extends Model
 	{
 		$sql = 'SELECT log_id as log_id, com_id as id, DATE_FORMAT(com_date, \'%d/%m/%Y à %Hh%imin%ss\') 
 		AS post_date_fr, com_author AS author, com_content AS oldcontent, post_id AS post_id, mod_type as mod_type, DATE_FORMAT(log_date, \'%d/%m/%Y à %Hh%imin%ss\') AS mod_date_fr 
-		FROM logs ORDER BY log_id DESC';
+		FROM logs WHERE mod_type = "deleted" ORDER BY log_id DESC';
 		$logs = $this->executerRequete($sql);
 		return $logs->fetchAll();
 	}
