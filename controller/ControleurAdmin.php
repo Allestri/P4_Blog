@@ -34,10 +34,10 @@ class ControleurAdmin {
 	
 	// Afficher logs modération
 	public function logsView(){
-		$logs = $this->administration->getLogsBetter();
-		$comments = $this->administration->getModCom();
+		$logsMod = $this->administration->getLogsBetterMod();
+		$logsDel = $this->administration->getLogsBetterDel();
 		$vue = new View("Logs");
-		$vue->generer(array("logs" => $logs,"modCom" => $comments));
+		$vue->generer(array("logsMod" => $logsMod, "logsDel" => $logsDel));
 	}
 	
 	public function deconnexion() {
