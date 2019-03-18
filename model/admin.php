@@ -17,7 +17,8 @@ Class Admin extends Model
 	// Liste commentaires signalés
 	public function getSignCom()
 	{
-		$sql = "SELECT * FROM `comments` WHERE COM_SIGNALER = 1";
+		$sql = 'SELECT com_id as com_id, DATE_FORMAT(com_date, \'%d/%m/%Y à %Hh%imin%ss\') as date_fr, com_auteur as author, com_contenu as content 
+		FROM `comments` WHERE COM_SIGNALER = 1';
 		$signCom = $this->executerRequete($sql);
 		return $signCom;
 	}

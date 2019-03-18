@@ -22,7 +22,7 @@
 				<a href="<?= "index.php?action=billet&id=" . $billet['id'] ?>">
 					<h3><?= $billet['titre'] ?></h3>
 				</a>
-				<i class="fas fa-comments"></i>
+				<!-- <i class="fas fa-comments"></i> -->
 				<div class="buttonAdmin">
 					<a href="<?= "index.php?action=vueModifier&id=" . $billet['id'] ?>" title="Modifier Billet" class="fas fa-pen-square"></a>
 					<a href="<?= "index.php?action=supprimer&id=" . $billet['id'] ?>" title="Supprimer Billet" class="fas fa-trash"></a>
@@ -62,16 +62,16 @@
 			<header>
 			<!-- Titre du commentaire !-->
 				<div class="modComInfo">
-					<p>Commentaire ID : <?= $signComs['COM_ID'] ?> </p>
-					<p>Posté par : <strong><?= $signComs['COM_AUTEUR']?></strong> le <?= $signComs['COM_DATE']?></p>
-					<a class="fas fa-times-circle crosscom" title="Supprimer Commentaire" href="index.php?action=suppresscom&id=<?= $signComs['COM_ID'] ?>"></a>
+					<p>Commentaire ID : <?= $signComs['com_id'] ?> </p>
+					<p>Posté par : <strong><?= $signComs['author']?></strong> le <?= $signComs['date_fr']?></p>
+					<a class="fas fa-times-circle crosscom" title="Supprimer Commentaire" href="index.php?action=suppresscom&id=<?= $signComs['com_id'] ?>"></a>
 				</div>
 			</header>
 
 			<div class="editcom">
 				<form method="post" class="editform" action="index.php?action=moderer">
-					<input type="hidden" name="cid" value="<?= $signComs['COM_ID'] ?>" />
-					<textarea cols="40" rows="5" name="modCom" placeholder="Editer Commentaire" required/><?= $signComs['COM_CONTENU']?></textarea>
+					<input type="hidden" name="cid" value="<?= $signComs['com_id'] ?>" />
+					<textarea cols="40" rows="5" name="modCom" placeholder="Editer Commentaire" required/><?= $signComs['content']?></textarea>
 					<button class="button modbutton">Modérer commentaire</button>
 				</form>
 			</div>

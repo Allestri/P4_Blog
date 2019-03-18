@@ -1,17 +1,22 @@
 <h1>Historique de modération</h1>
+<div id="titlewrapper">
+	<h2>Modifications</h2>
+	<h2>Suppressions</h2>
+</div>
 <div id="wrapper-logs">
 	<!-- Commentaires edités -->
 	<div id="editwrapper" class="wrapperlogs">
-		<h1>Modifications</h1>
 		<?php 
 		foreach ($logsMod as $historiqueEdit): ?>
 		<div class="comment logs box">
 			<div class="editstatus">
-				<a href="<?="index.php?action=billet&id=" . $historiqueEdit['post_id']?>"/>Ce commentaire a été modifié le <?= $historiqueEdit['mod_date_fr'] ?>
+				<a href="<?="index.php?action=billet&id=" . $historiqueEdit['post_id']?>"/>Ce commentaire a été modifié le <time><?= $historiqueEdit['mod_date_fr'] ?></time></a>
 			</div>
-			<p>Posté par</a><strong> <?= $historiqueEdit['author'] ?> </strong>posté le <?= $historiqueEdit['post_date_fr'] ?></p>
-			<p><?= $historiqueEdit['com_id'] ?></p>
-			<p><?= $historiqueEdit['oldcontent'] ?></p>
+			<p>Auteur : <?= $historiqueEdit['author'] ?></p>
+			<p>Posté le <time><?= $historiqueEdit['post_date_fr'] ?></time></p>
+			<p>Commentaire :</p> <?= $historiqueEdit['oldcontent'] ?></p>
+			<hr>
+			<h3 class="newcomstatus">Contenus après modération</h3>
 			<div class="newcomment">
 				<p><?= $historiqueEdit['newcontent'] ?></p>
 			</div>
@@ -20,14 +25,15 @@
 	</div>
 	<!-- Commentaires effacés -->
 	<div id="deletewrapper" class="wrapperlogs">
-		<h1>Suppressions</h1>
 		<?php
 		foreach ($logsDel as $historiqueDel): ?>
 		<div class="comment logs box">
-			<p>Un commentaire a été supprimé le <?= $historiqueDel['mod_date_fr'] ?></p>
+			<div class="comstatus">
+				<p>Un commentaire a été supprimé le <time><?= $historiqueDel['mod_date_fr'] ?></time></p>
+			</div>
 			<p>Auteur : <?= $historiqueDel['author'] ?>
-			<p>Posté le <?= $historiqueDel['post_date_fr'] ?></p>
-			<p>Contenu: <?= $historiqueDel['oldcontent'] ?></p>
+			<p>Posté le <time><?= $historiqueDel['post_date_fr'] ?></time></p>
+			<p>Commentaire : <?= $historiqueDel['oldcontent'] ?></p>
 		</div>
 		<?php endforeach; ?>
 	</div>

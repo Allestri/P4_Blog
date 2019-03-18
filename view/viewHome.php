@@ -1,6 +1,5 @@
 <?php $this->titre = 'Accueil de mon Blog'; ?>
 
-<!-- Template contenus -->
 <div id="wrapper-home">
 	<?php foreach ($billets as $billet): ?>
 	<div class="wrapper">
@@ -21,5 +20,4 @@
 	<?php endforeach; ?>
 </div>
 
-<!-- Fin du template contenus-->
 
