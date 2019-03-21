@@ -19,7 +19,7 @@
 
 		<?php foreach ($commentairest as $commentaire): ?>
 		<div class="comment box">
-		  <div class="commentInfo"><b><?= $commentaire['auteur'] ?></b> posté le <?= $commentaire['date_fr'] ?> 
+		  <div class="commentInfo"><b><?= htmlspecialchars($commentaire['auteur']) ?></b> posté le <?= $commentaire['date_fr'] ?> 
 			<form method="post" action="index.php?action=signaler">
 				<input type="hidden" name="idBillet" value="<?= $billet['id'] ?>" />
 				<input type="hidden" name="idCom" value="<?= $commentaire['id'] ?>" />
@@ -35,7 +35,7 @@
 			</form>
 		  </div>
 
-		  <p><?= $commentaire['contenu'] ?></p>
+		  <p><?= htmlspecialchars($commentaire['contenu']) ?></p>
 		</div>
 		<?php endforeach; ?>
 		<header class="box">

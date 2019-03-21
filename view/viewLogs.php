@@ -12,9 +12,9 @@
 			<div class="editstatus">
 				<a href="<?="index.php?action=billet&id=" . $historiqueEdit['post_id']?>"/>Ce commentaire a été modifié le <time><?= $historiqueEdit['mod_date_fr'] ?></time></a>
 			</div>
-			<p>Auteur : <?= $historiqueEdit['author'] ?></p>
+			<p>Auteur : <?= htmlspecialchars($historiqueEdit['author']) ?></p>
 			<p>Posté le <time><?= $historiqueEdit['post_date_fr'] ?></time></p>
-			<p>Commentaire :</p> <?= $historiqueEdit['oldcontent'] ?></p>
+			<p>Commentaire :</p> <?= htmlspecialchars($historiqueEdit['oldcontent']) ?></p>
 			<hr>
 			<h3 class="newcomstatus">Contenus après modération</h3>
 			<div class="newcomment">
@@ -31,9 +31,9 @@
 			<div class="comstatus">
 				<p>Un commentaire a été supprimé le <time><?= $historiqueDel['mod_date_fr'] ?></time></p>
 			</div>
-			<p>Auteur : <?= $historiqueDel['author'] ?>
+			<p>Auteur : <?= htmlspecialchars($historiqueDel['author']) ?>
 			<p>Posté le <time><?= $historiqueDel['post_date_fr'] ?></time></p>
-			<p>Commentaire : <?= $historiqueDel['oldcontent'] ?></p>
+			<p>Commentaire : <?= htmlspecialchars($historiqueDel['oldcontent']) ?></p>
 		</div>
 		<?php endforeach; ?>
 	</div>
