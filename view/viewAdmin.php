@@ -72,7 +72,7 @@
 				<form method="post" class="editform" action="index.php?action=moderer">
 					<input type="hidden" name="cid" value="<?= $signComs['com_id'] ?>" />
 					<textarea cols="40" rows="5" name="modCom" placeholder="Editer Commentaire" required/><?= htmlspecialchars($signComs['content'])?></textarea>
-					<button class="button modbutton">Modérer commentaire</button>
+					<button class="button modbutton">Modérer</button>
 				</form>
 			</div>
 		</article>

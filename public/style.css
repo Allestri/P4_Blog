@@ -540,6 +540,7 @@ Administration & Moderation
 {
 	margin:25px 20px;
 	height:30px;
+	width:150px;
 }
 
 .buttonRow
@@ -756,9 +757,14 @@ Media Queries
 	font-size:1.3em;
 }
 
-.adminicon
+.adminicon, .crosscom
 {
 	font-size:1.5em;
+}
+
+.editform
+{
+	flex-direction:column;
 }
 
 .form-bloc
@@ -790,6 +796,11 @@ Media Queries
 	width:60%;
 }
 	
+.editform
+{
+	padding:0px 0px;
+}
+
 	
 }
 
