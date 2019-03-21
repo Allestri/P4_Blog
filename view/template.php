@@ -29,12 +29,12 @@
 							<p><a href="index.php?action=deconnexion" class="button-connexion" id="logintext">Deconnexion</a></p>
 							<a href="index.php?action=deconnexion" class="fas fa-sign-out-alt button-connexion" id="loginlogo"></a>';
 					}else {
-						echo '<form method="POST" action="index.php?action=connexionAdmin">
+						echo '<form method="POST" id="connexionAdmin" action="index.php?action=connexionAdmin">
 						<input type="text" name="username" placeholder="Identifiant" required/>
 						<input type="password" name="password" placeholder="Mot de passe" required/>
 						<input type="submit" class="button-connexion" id="logintext" value="Connexion">
-						<button class="button-connexion" id="loginlogo"><i class="fas fa-sign-in-alt"></i></button>
-						</form>';
+						</form>
+						<button class="button-connexion" id="loginlogo" form="connexionAdmin"><i class="fas fa-sign-in-alt"></i></button>';
 					}
 					?>
 				</div>
