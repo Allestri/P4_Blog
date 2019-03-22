@@ -1,3 +1,5 @@
+<?php $this->titre = "Blog Alaska - Administration"; ?>
+
 <div id="wrapper-admin">
 	
 	<div id="admin">
@@ -38,10 +40,10 @@
 			<?php 
 				if($signComNbr['nbsigncoms'] > 1) {
 					echo "<i class='fas fa-exclamation-triangle adminicon'></i>
-					<h2 class='moderationstatus'>Il y a actuellement " . $signComNbr['nbsigncoms'] . " commentaires à modérer</h2>";
+					<h2 class='moderationstatus'>Il y a " . $signComNbr['nbsigncoms'] . " commentaires à modérer</h2>";
 				} else if($signComNbr['nbsigncoms'] == 1) {
 					echo "<i class='fas fa-exclamation-triangle orange adminicon'></i>
-					<h2 class='moderationstatus'>Il y a actuellement " . $signComNbr['nbsigncoms'] . " seul commentaire à modérer</h2>";
+					<h2 class='moderationstatus'>Il y a " . $signComNbr['nbsigncoms'] . " seul commentaire à modérer</h2>";
 				} else {
 					echo "<i class='fas fa-check-circle adminicon'></i>
 					<h2 class='moderationstatus'>Tout va bien, il n'y a rien à modérer</h2>";

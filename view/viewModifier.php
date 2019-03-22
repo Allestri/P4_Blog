@@ -1,3 +1,5 @@
+<?php $this->titre = "Blog Alaska - Modifier un billet"; ?>
+
 <div id="wrapper-home">
 	<h2>Modifier un Billet</h2>
 	<form method="POST" action="<?= "index.php?action=modifier&id=" . $billet['id']?>" id="modifier_form">

@@ -1,4 +1,4 @@
-<?php $title = "Mon Blog - " . $billet['titre']; ?>
+<?php $this->titre = "Blog Alaska - " . $billet['titre']; ?>
 
 <div id="wrapper-home">
 	<div class="wrapper">

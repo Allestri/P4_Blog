@@ -1,3 +1,5 @@
+<?php $this->titre = "Blog Alaska - Créer Billet"; ?>
+
 <div id="wrapper-home">
 	<h2>Créer un Billet</h2>
 	<form method="POST" action="index.php?action=creer" id="creer_form">

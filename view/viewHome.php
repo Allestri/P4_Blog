@@ -1,4 +1,4 @@
-<?php $this->titre = 'Accueil de mon Blog'; ?>
+<?php $this->titre = "Blog Alaska : Accueil"; ?>
 
 <div id="wrapper-home">
 	<?php foreach ($billets as $billet): ?>

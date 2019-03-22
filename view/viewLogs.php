@@ -1,3 +1,5 @@
+<?php $this->titre = "Blog Alaska - Historique"; ?>
+
 <h1>Historique de modération</h1>
 <div id="titlewrapper">
 	<h2>Modifications</h2>
